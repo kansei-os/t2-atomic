@@ -19,8 +19,8 @@ set -ouex pipefail
 # dnf5 -y copr disable ublue-os/
 
 dnf5 -y copr enable sharpenedblade/t2linux
-dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core
-dnf5 -y install kernel kernel-core kernel-modules kernel-modules-core
+dnf5 swap -y \
+    --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux kernel kernel-core kernel-modules kernel-modules-core
 dnf5 -y install t2fanrd t2linux-audio
 dnf5 -y copr disable sharpenedblade/t2linux
 
