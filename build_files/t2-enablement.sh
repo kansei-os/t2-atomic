@@ -31,3 +31,5 @@ systemctl enable t2fanrd.service
 # like sg3_utils to support USB superdrive slot load operation,
 # and cli apps to access hardware sensors
 dnf5 install -y sg3_utils wodim lm_sensors powertop radeon-profile
+
+dnf clean all
