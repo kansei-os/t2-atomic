@@ -24,7 +24,11 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/t2-enablement.sh && \
     ostree container commit
-    
+
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint
+
+# Define required labels for this bootc image to be recognized as such.
+LABEL containers.bootc 1
+LABEL ostree.bootable 1
