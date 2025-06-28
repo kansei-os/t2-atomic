@@ -23,13 +23,13 @@ dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-uki-
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
 dnf5 -y versionlock delete kernel kernel-core kernel-modules \
   kernel-modules-core kernel-tools kernel-tools-libs
-#dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel kernel-core kernel-modules kernel-modules-core kernel-tools kernel-tools-libs
+dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel kernel-core kernel-modules kernel-modules-core kernel-tools kernel-tools-libs
 
-rpm-ostree override replace --experimental \
-    --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
-    kernel kernel-core \
-    kernel-modules kernel-modules-core \
-    kernel-tools kernel-tools-libs \
+#rpm-ostree override replace --experimental \
+#    --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
+#    kernel kernel-core \
+#    kernel-modules kernel-modules-core \
+#    kernel-tools kernel-tools-libs \
 
 dnf5 -y install t2fanrd t2linux-audio
 dnf5 -y copr disable sharpenedblade/t2linux
