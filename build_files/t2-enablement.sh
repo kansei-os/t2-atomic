@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -ouex pipefail
-
+kver="6.15.3-210.t2.fc42.x86_64"
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -44,4 +44,5 @@ dnf5 install -y sg3_utils wodim lm_sensors powertop radeon-profile
 dnf clean all
 
 #regen initramfs after kernel install
-set -x; kver=$(cd /usr/lib/modules && echo *); dracut -vf /usr/lib/modules/$kver/initramfs.img $kver
+#set -x; kver=$(cd /usr/lib/modules && echo *); dracut -vf /usr/lib/modules/$kver/initramfs.img $kver
+set -x; dracut -vf /usr/lib/modules/$kver/initramfs.img $kver
