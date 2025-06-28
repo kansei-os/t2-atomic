@@ -1,7 +1,7 @@
 # T2-Atomic - now with more bootc
 
 # Purpose
-## warning: this is pre-alpha territory, don't install it even if you dare. Follow along and we'll announce a release when things are ready for public consumption. Expecteded in early July 2025.
+## warning: this is pre-alpha territory, don't install it even if you dare. Follow along and we'll announce a release when things are ready for public consumption, probably by early July 2025.
 
 #### Do you have a T2 Mac? 
 This is the last Intel generation of most models before the Apple Silicon transition. Including models like the 2018-2019 MacBook Pro 13", the 2019 MacBook Pro 16", and some Mac Minis and iMacs. Sadly many of these models have already been dropped from support from the upcoming Mac OS 26 Tahoe (coming fall 2025). Apple would prefer if you traded in on some fresh Apple Silicon, but for those of us who love how Linux can breathe fresh life into "old" hardware, these computers can still make great workstations for years to come, with the latest open source packages (while Apple sunsets rosetta2 for no reason other than they want to). 
