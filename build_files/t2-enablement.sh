@@ -44,4 +44,4 @@ dnf5 install -y sg3_utils wodim lm_sensors powertop radeon-profile
 dnf clean all
 
 #regen initramfs after kernel install
-#set -x; kver=$(cd /usr/lib/modules && echo *); dracut -vf /usr/lib/modules/$kver/initramfs.img $kver
+set -x; kver=$(cd /usr/lib/modules && echo *); dracut -vf /usr/lib/modules/$kver/initramfs.img $kver
