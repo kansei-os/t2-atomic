@@ -6,11 +6,11 @@ on:
       - main
   schedule:
     - cron: '05 10 * * *'  # 10:05am UTC everyday
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - '**/README.md'
+  #push:
+  #  branches:
+  #    - main
+  #  paths-ignore:
+  #    - '**/README.md'
   workflow_dispatch:
 
 env:
