@@ -18,7 +18,7 @@ dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
   wl-clipboard pavucontrol playerctl qt5-qtwayland \
   qt6-qtwayland vulkan-validation-layers vulkan-tools \
   gnome-disk-utility ddcutil waycheck adw-gtk3-theme wlogout \
-  xwayland-satellite
+  xwayland-satellite fuzzel rofi-wayland
 
 #### sound networking etc
 dnf5 -y install helvum network-manager-applet \
