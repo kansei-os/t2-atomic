@@ -37,7 +37,7 @@ dnf5 -y install thunar thunar-archive-plugin thunar-volman \
 #### theming, fonts
 dnf5 -y install fontawesome-fonts-all gnome-themes-extra \
   gnome-icon-theme paper-icon-theme breeze-icon-theme \
-  papirus-icon-theme yaru-theme google-noto-emoji-fonts \
+  papirus-icon-theme google-noto-emoji-fonts \
   SwayNotificationCenter swww cascadia-fonts-all mozilla-fira-sans-fonts \
   mozilla-fira-mono-fonts jetbrains-mono-fonts-all ibm-plex-fonts-all
 
