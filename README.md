@@ -4,11 +4,16 @@
 ## warning: this is pre-alpha territory, don't install it even if you dare. Follow along and we'll announce a release when things are ready for public consumption.
 
 #### Do you have a T2 Mac? 
-This is the last Intel generation of most models before the Apple Silicon transition. Including models like the 2018-2019 MacBook Pro 13", the 2019 MacBook Pro 16", and some Mac Minis and iMacs. Still quite powerful computers, with 8th and 9th gen Intel i5-i9 processors, discrete Radeon Pro graphics etc. Sadly many of these models have already been dropped from support from the upcoming Mac OS 26 Tahoe.
+This is the last Intel generation of most models before the Apple Silicon transition. Including models like the 2018-2019 MacBook Pro 13", the 2019 MacBook Pro 16", and some Mac Minis and iMacs. Sadly many of these models have already been dropped from support from the upcoming Mac OS 26 Tahoe (coming fall 2025). Apple would prefer if you traded in on some fresh Apple Silicon, but for those of us who love how Linux can breathe fresh life into "old" hardware, these computers can still make great workstations for years to come, with the latest open source packages (while Apple sunsets rosetta2 for no reason other than they want to). 
 
 #### Do you want to use a Fedora Silverblue or another Atomic desktop on your T2 Mac?
 If you've wanted to use Fedora Silverblue, Sway Atomic, or similar but ran into the trouble of them not being operational on your T2 Mac, you've come to the right place. This repository intends to deliver Fedora Atomic Desktop images like Silverblue, as well as custom images of Universal Blue's popular Bluefin and Bazzite, customized for T2 Macs, using bootc. This is effectively a fork of [T2 Atomic](https://github.com/lauretano/t2-atomic/), which is based on rpm-ostree and blue-build.org tooling.
 
+#### Why Atomic / Immutable / bootc?
+Specific to our Macs, as T2 support in the mainline kernel changes, as utilities that enable further hardware support come and go, or get redone in rust as one does, or as new workarounds for various outstanding issues are found, you're a simple, atomic upgrade away from getting those improvements delivered alongside system package updates.
+
+Unlike Mac OS, where Apple continually reduces the featureset available to older hardware, with an atomic Linux image you get continual improvement, as long as there's community interest in keeping this around.
+ 
 In current state, this isn't ready for public consumption, missing some rather critical components like wifi/bluetooth firmware. Testing is underway, using an existing T2-Atomic (the older rpm-ostree version) test MacBookPro15,2 (2018 13" 4-port T2. With bootc, we should be able to deliver an installer ISO for the first time, greatly simplifying install. For an existing T2-Atomic workstation the goal is for it to be a relatively seamless "bootc switch" command to transition.
 
 Our first bootc custom image is derived from the official Fedora bootc base image (aka Silverblue). We'll also support Universal Blue images like Bazzite, Bluefin, and Aurora --with a little bit of work, they have some additional packages we may need to modify/remove to ensure compatibility with the T2 kernel. Even a Centos Stream bootc image is possible.
