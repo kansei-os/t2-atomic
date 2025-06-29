@@ -1,10 +1,11 @@
 # T2-Atomic (bootc)
-Fedora/CentOS Desktop Images, built for T2 Macs, with transactional upgrades and rollbacks, delivered using OCI/container images. **Now with more [bootc](https://bootc-dev.github.io/bootc/)**
+Fedora/CentOS Desktop Images, built for T2 Macs, with transactional upgrades and rollbacks, delivered using OCI/container images. **Now with more [bootc](https://bootc-dev.github.io/bootc/)**.
 ## Not Installable at this time
 Do not attempt install just yet. We're just getting kicked off, getting the infrastructure in place to support transitioning existing T2-Atomic users to bootc. We hope to have an installable image by early July 2025. Thanks for your patience and support! 
 
 #### Do you have a T2 Mac? 
 This is the last Intel generation of most models before the Apple Silicon transition. Including models like the 2018-2019 MacBook Pro 13", the 2019 MacBook Pro 16", and some Mac Minis and iMacs. Sadly many of these models have already been dropped from support from the upcoming Mac OS 26 Tahoe (coming fall 2025). Apple would prefer if you traded in on some fresh Apple Silicon, but for those of us who love how Linux can breathe fresh life into "old" hardware, these computers can still make great workstations for years to come, with the latest open source packages (while Apple sunsets rosetta2 for no reason other than they want to). 
+For a more comprehensive list of T2 Macs see [the wiki](https://github.com/kansei-os/t2-atomic/wiki/T2-Hardware)
 
 #### Do you want to use a Fedora Silverblue or another Atomic desktop on your T2 Mac?
 If you've wanted to use Fedora Silverblue, Sway Atomic, or similar but ran into the trouble of them not being operational on your T2 Mac, you've come to the right place. This repository intends to deliver Fedora Atomic Desktop images like Silverblue, as well as custom images of Universal Blue's popular Bluefin and Bazzite, customized for T2 Macs, using bootc. This is effectively a fork of [T2 Atomic](https://github.com/lauretano/t2-atomic/), which is based on rpm-ostree and blue-build.org tooling.
