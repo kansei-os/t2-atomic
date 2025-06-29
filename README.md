@@ -14,7 +14,7 @@ Our first bootc test image is derived from the official Fedora bootc base image 
 
 ### Fake FAQ until real Q's are A'd:
 #### Why Atomic / Immutable / bootc?
-Specific to our Macs, as T2 support in the mainline kernel changes, as utilities that enable further hardware support come and go, or get redone in rust as one does, or as new workarounds for various outstanding issues are found, you're a simple, atomic upgrade away from getting those improvements delivered alongside system package updates.
+Specific to our Macs, as T2 support in the mainline kernel changes, or utilities/workarounds that enable further hardware support come and go, we've got you. A simple, transactional upgrade delivers the best T2 support possible on Fedora, with minimal cognitive load for you.
 
 Unlike Mac OS, where Apple continually reduces the featureset available to older hardware, with an atomic Linux image you get continual improvement, as long as there's community interest in keeping this around.
  
@@ -27,3 +27,8 @@ The installation of T2-Atomic was a series of command line steps, and required y
 The rpm-ostree method we had been using since Fedora 40 to override the base image kernel packages to replace with those from the [t2linux COPR](https://copr.fedorainfracloud.org/coprs/sharpenedblade/t2linux/) has been deprecated, and does appear to no longer work as of June 2025. It also limited us from expanding support to the popular Universal Blue images Bluefin (workstation-focused) and Bazzite (gaming-focused) as we weren't able to use the old method to override on those.
 
 This is only a fork in that it's a ground-up rebuild of the project using more modern tooling. The old project started in 2023, using what was available at the time. Same crew (of one for now). With bootc, we should be able to deliver an installer ISO for the first time, greatly simplifying install. For an existing T2-Atomic workstation the goal is for it to be a relatively seamless "bootc switch" command to transition, once these images are at parity with the existing project.
+
+#### Will I have to use a .. command line????
+You are installing Linux on a Macbook, you've already come so far, you got this. Day to day, you can mostly forget there's a terminal. Some white text on black screen will appear from time to time, during boot and shutdown. It can be minimized. We endeavour to have the installation be free of command line, but at times on the installed system it may be unavoidable. It's also nothing to be afraid of, especially due to the immutable nature of T2-Atomic. You can almost always roll back. We'll keep the commands as simple as possible. If we "finish" all the project to-dos we can definitely consider some basic graphical tools for things like switching image variants, adjusting T2-specific settings, and manual rollbacks.
+
+Updates happen in the background (on a timer or after boot) and are applied on the next boot. We don't do any intentional notification of the updates as it's meant to be mostly passive the way a chromebook is.
