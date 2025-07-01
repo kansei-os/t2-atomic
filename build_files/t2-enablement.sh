@@ -19,11 +19,13 @@ kver="6.15.3-210.t2.fc42.x86_64"
 # dnf5 -y copr disable ublue-os/
 dnf5 -y install dnf5-plugins python3-jsonschema
 dnf5 -y copr enable sharpenedblade/t2linux
-dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-uki-virt kernel-modules-extra kernel-headers kernel-tools kernel-tools-libs
+dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-uki-virt kernel-modules-extra \
+  kernel-headers kernel-tools kernel-tools-libs
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
 dnf5 -y versionlock delete kernel kernel-core kernel-modules \
   kernel-modules-core kernel-tools kernel-tools-libs
-dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel kernel-core kernel-modules kernel-modules-core kernel-tools kernel-tools-libs
+dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel kernel-core \
+  kernel-modules kernel-modules-core kernel-tools kernel-tools-libs
 
 #rpm-ostree override replace --experimental \
 #    --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
@@ -32,6 +34,10 @@ dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install ker
 #    kernel-tools kernel-tools-libs \
 
 dnf5 -y install t2fanrd t2linux-audio
+
+# remove packages from fedora image macs don't need
+dnf5 -y remove tiwilink-firmware nxpwireless-firmware nvidia-gpu-firmware mt7xxx-firmware iwlegacy-firmware \
+  iwlwifi-dvm-firmware iwlwifi-mvm-firmware 
 dnf5 -y copr disable sharpenedblade/t2linux
 
 systemctl enable t2fanrd.service
@@ -39,7 +45,7 @@ systemctl enable t2fanrd.service
 # installing some packages for full support of apple ecosystem, 
 # like sg3_utils to support USB superdrive slot load operation,
 # and cli apps to access hardware sensors
-dnf5 install -y sg3_utils wodim lm_sensors powertop radeon-profile
+dnf5 install -y lm_sensors powertop radeon-profile
 
 dnf clean all
 
