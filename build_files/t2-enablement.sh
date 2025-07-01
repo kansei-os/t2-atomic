@@ -48,7 +48,8 @@ systemctl enable t2fanrd.service
 dnf5 install -y lm_sensors powertop radeon-profile
 
 # installing radio software
-tar -xf common/radio.tar -C /lib/firmware/brcm
+mkdir -p /lib/firmware/brcm
+tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
 
 dnf5 install -y fedora-release-ostree-desktop
 
