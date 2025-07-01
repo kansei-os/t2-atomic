@@ -47,6 +47,9 @@ systemctl enable t2fanrd.service
 # and cli apps to access hardware sensors
 dnf5 install -y lm_sensors powertop radeon-profile
 
+# installing radio software
+tar -xf common/radio.tar -C /lib/firmware/brcm
+
 dnf5 install -y fedora-release-ostree-desktop
 
 dnf clean all
