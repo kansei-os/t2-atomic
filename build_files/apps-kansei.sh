@@ -48,8 +48,4 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
    cosmic-edit cosmic-settings cosmic-settings-daemon dmg2img stow \
    topgrade niri sg3_utils wodim wayvnc unrar cosmic-session cosmic-wallpapers \
    fastfetch sway-wallpapers
-   
-dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-dnf5 -y install tailscale
-systemctl enable tailscaled
       
