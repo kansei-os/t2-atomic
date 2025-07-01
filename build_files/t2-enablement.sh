@@ -52,6 +52,7 @@ mkdir -p /lib/firmware/brcm
 tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
 
 # applying some T2 customizations
+mkdir -p /etc
 cp -r /ctx/common/system/etc/ /etc/
 
 dnf5 install -y fedora-release-ostree-desktop
