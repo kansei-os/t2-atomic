@@ -50,9 +50,9 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
    fastfetch sway-wallpapers
 
 dnf5 -y remove firefox firefox-langpacks
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y org.mozilla.firefox
-flatpak install -y org.kde.kalm
+#flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+#flatpak install -y org.mozilla.firefox
+#flatpak install -y org.kde.kalm
 
 dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 -y install tailscale
