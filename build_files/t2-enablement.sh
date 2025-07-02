@@ -45,7 +45,7 @@ systemctl enable t2fanrd.service
 # installing some packages for full support of apple ecosystem, 
 # like sg3_utils to support USB superdrive slot load operation,
 # and cli apps to access hardware sensors
-dnf5 install -y lm_sensors powertop
+dnf5 install -y lm_sensors sg3_utils wodim
 
 # installing radio software
 mkdir -p /lib/firmware/brcm
