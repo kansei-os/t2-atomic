@@ -22,7 +22,7 @@ dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
 #### sound networking etc
 dnf5 -y install helvum network-manager-applet \
 NetworkManager-openvpn NetworkManager-openconnect \
-bluez bluez-tools blueman poweralertd 
+bluez bluez-tools blueman poweralertd
 
 #### display
 dnf5 -y install wlr-randr wlsunset brightnessctl swaylock \
@@ -50,7 +50,7 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
    fastfetch sway-wallpapers
 
 dnf5 -y remove firefox firefox-langpacks
-
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install -y org.mozilla.firefox
 flatpak install -y org.kde.kalm
 
