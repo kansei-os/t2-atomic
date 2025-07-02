@@ -1,6 +1,5 @@
 ---
-name: Build disk images
-
+name: Build ISO - T2-Bluefin
 on:
   workflow_dispatch:
     inputs:
