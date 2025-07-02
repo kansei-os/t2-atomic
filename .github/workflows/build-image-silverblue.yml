@@ -1,5 +1,5 @@
 ---
-name: Build container image - bluefin spin
+name: Build container image - silverblue spin
 on:
   pull_request:
     branches:
