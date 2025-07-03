@@ -19,7 +19,7 @@ set -ouex pipefail
 # dnf -y copr disable ublue-os/
 dnf -y install python3-jsonschema
 dnf -y install 'dnf-command(copr)'
-dnf -y copr enable sharpenedblade/t2linux
+dnf -y copr enable sharpenedblade/t2linux fedora-41-x86_64
 dnf -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-uki-virt kernel-modules-extra \
   kernel-headers kernel-tools kernel-tools-libs
 #dnf -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
