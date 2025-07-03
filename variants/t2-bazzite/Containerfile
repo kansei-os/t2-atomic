@@ -20,7 +20,7 @@ FROM ghcr.io/ublue-os/bazzite:42
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 # some T2 tweaks require etc drop-ins
-COPY --chmod=0644 ../common/etc/ /etc/
+COPY --chmod=0644 /variants/common/etc/ /etc/
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
