@@ -18,6 +18,7 @@ set -ouex pipefail
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf -y copr disable ublue-os/
 dnf -y install python3-jsonschema
+dnf -y install 'dnf-command(copr)'
 dnf -y copr enable sharpenedblade/t2linux
 dnf -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-uki-virt kernel-modules-extra \
   kernel-headers kernel-tools kernel-tools-libs
@@ -37,12 +38,12 @@ dnf -y install t2fanrd t2linux-audio
 
 # remove packages from fedora image macs don't need
 dnf -y remove tiwilink-firmware nxpwireless-firmware nvidia-gpu-firmware mt7xxx-firmware iwlegacy-firmware \
-  iwlwifi-dvm-firmware iwlwifi-mvm-firmware 
+  iwlwifi-dvm-firmware iwlwifi-mvm-firmware
 dnf -y copr disable sharpenedblade/t2linux
 
 systemctl enable t2fanrd.service
 
-# installing some packages for full support of apple ecosystem, 
+# installing some packages for full support of apple ecosystem,
 # like sg3_utils to support USB superdrive slot load operation,
 # and cli apps to access hardware sensors
 dnf install -y lm_sensors powertop
