@@ -23,7 +23,8 @@ dnf -y copr enable sharpenedblade/t2linux fedora-41-x86_64
 dnf -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-uki-virt kernel-modules-extra \
   kernel-headers kernel-tools kernel-tools-libs
 #dnf -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
-dnf -y versionlock delete kernel kernel-core kernel-modules \
+#dnf -y install 'dnf-command(versionlock)'
+#dnf -y versionlock delete kernel kernel-core kernel-modules \
   kernel-modules-core kernel-tools kernel-tools-libs
 dnf -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel kernel-core \
   kernel-modules kernel-modules-core kernel-tools kernel-tools-libs
