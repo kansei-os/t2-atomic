@@ -20,7 +20,7 @@ FROM ghcr.io/ublue-os/sway-atomic-main:42
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 # some T2 tweaks require etc drop-ins
-COPY --chmod=0644 ../common/etc/ /etc/
+COPY --chmod=0644 /variants/common/etc/ /etc/
 
 #t2-enablement is the base package set including kernel
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
