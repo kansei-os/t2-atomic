@@ -37,12 +37,10 @@ dnf5 -y install t2fanrd t2linux-audio
 
 # remove packages from fedora image macs don't need
 dnf5 -y remove tiwilink-firmware nxpwireless-firmware nvidia-gpu-firmware mt7xxx-firmware iwlegacy-firmware \
-  iwlwifi-dvm-firmware iwlwifi-mvm-firmware 
+  iwlwifi-dvm-firmware iwlwifi-mvm-firmware
 dnf5 -y copr disable sharpenedblade/t2linux
 
-systemctl enable t2fanrd.service
-
-# installing some packages for full support of apple ecosystem, 
+# installing some packages for full support of apple ecosystem,
 # like sg3_utils to support USB superdrive slot load operation,
 # and cli apps to access hardware sensors
 dnf5 install -y lm_sensors sg3_utils wodim
@@ -52,9 +50,8 @@ mkdir -p /lib/firmware/brcm
 tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
 
 # applying some T2 customizations
-mkdir -p /etc
-cp -r /ctx/common/system/etc/ /etc/
 systemctl mask suspend.target
+systemctl enable t2fanrd.service
 
 dnf5 install -y fedora-release-ostree-desktop
 

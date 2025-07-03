@@ -9,7 +9,7 @@ FROM ghcr.io/ublue-os/bluefin:42
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
-# 
+#
 # ... and so on, here are more base images
 # Universal Blue Images: https://github.com/orgs/ublue-os/packages
 # Fedora base image: quay.io/fedora/fedora-bootc:41
@@ -18,6 +18,9 @@ FROM ghcr.io/ublue-os/bluefin:42
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
+
+# some T2 tweaks require etc drop-ins
+COPY --chmod=0644 ../common/etc/ /etc/
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
