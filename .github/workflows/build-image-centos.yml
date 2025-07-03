@@ -1,11 +1,11 @@
 ---
-name: Build container image - centos stream spin
+name: Build Image - Alma
 on:
   pull_request:
     branches:
       - main
   schedule:
-    - cron: '30 10 * * *'  # 10:05am UTC everyday
+    - cron: "30 10 * * *" # 10:05am UTC everyday
   #push:
   #  branches:
   #    - main
@@ -14,11 +14,11 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_DESC: "T2-Atomic CentOS Stream"
+  IMAGE_DESC: "T2-Atomic Alma Linux 10 Kitten"
   IMAGE_KEYWORDS: "bootc,centos,universal-blue"
-  IMAGE_LOGO_URL: "https://avatars.githubusercontent.com/u/120078124?s=200&v=4"  # Put your own image here for a fancy profile on https://artifacthub.io/!
-  IMAGE_NAME: "${{ github.event.repository.name }}-centos"  # output image name, usually same as repo name
-  IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
+  IMAGE_LOGO_URL: "https://avatars.githubusercontent.com/u/120078124?s=200&v=4" # Put your own image here for a fancy profile on https://artifacthub.io/!
+  IMAGE_NAME: "${{ github.event.repository.name }}-alma10" # output image name, usually same as repo name
+  IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}" # do not edit
   DEFAULT_TAG: "latest"
 
 concurrency:
