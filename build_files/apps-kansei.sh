@@ -54,6 +54,6 @@ dnf5 -y remove firefox firefox-langpacks
 #flatpak install -y org.mozilla.firefox
 #flatpak install -y org.kde.kalm
 
-dnf5 -y config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+dnf5 -y config-manager addrepo --overwrite --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 -y install tailscale
 systemctl enable tailscaled.service
