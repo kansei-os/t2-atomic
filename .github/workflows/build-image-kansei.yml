@@ -6,11 +6,11 @@ on:
       - main
   schedule:
     - cron: "15 10 * * *" # 10:05am UTC everyday
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - '**/README.md'
+  #push:
+  #  branches:
+  #    - main
+  #  paths-ignore:
+  #    - '**/README.md'
   workflow_dispatch:
 
 env:
@@ -52,7 +52,7 @@ jobs:
       #   with:
       #     remove-codeql: true
 
-      - name: Mount BTRFS for podman storage
+      - name: Moumatmatnt BTRFS for podman storage
         uses: ublue-os/container-storage-action@main
 
       - name: Get current date
