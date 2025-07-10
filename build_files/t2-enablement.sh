@@ -43,7 +43,7 @@ dnf5 -y copr disable sharpenedblade/t2linux
 # installing some packages for full support of apple ecosystem,
 # like sg3_utils to support USB superdrive slot load operation,
 # and cli apps to access hardware sensors
-dnf5 install -y lm_sensors sg3_utils wodim
+dnf5 install -y lm_sensors sg3_utils cdrkit xorriso
 
 # installing radio software
 mkdir -p /lib/firmware/brcm

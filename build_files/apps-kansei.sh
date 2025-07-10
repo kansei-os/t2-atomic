@@ -47,7 +47,7 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
   libtirpc-devel python3-openidc-client cosmic-store cosmic-files \
    cosmic-edit cosmic-settings cosmic-settings-daemon dmg2img stow \
    topgrade niri wayvnc unrar cosmic-session cosmic-wallpapers \
-   fastfetch sway-wallpapers
+   fastfetch sway-wallpapers brasero
 
 dnf5 -y remove firefox firefox-langpacks
 #flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
