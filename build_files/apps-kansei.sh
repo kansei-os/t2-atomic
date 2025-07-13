@@ -16,7 +16,7 @@ dnf5 -y copr enable yalter/niri
 dnf5 -y copr enable gloriouseggroll/nobara-42
 
 #### greeters, login things
-dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
+dnf5 -y --setopt=install_weak_deps=False install greetd greetd-selinux tuigreet gtkgreet seatd
 
 #### wayland wm environment
 dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
