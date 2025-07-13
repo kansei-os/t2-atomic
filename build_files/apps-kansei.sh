@@ -55,7 +55,7 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
    topgrade niri wayvnc unrar cosmic-session cosmic-wallpapers \
    fastfetch sway-wallpapers wodim brasero
 
-dnf5 copr enable kylegospo/webapp-manager
+dnf5 -y copr enable kylegospo/webapp-manager
 dnf5 -y install webapp-manager
 
 
