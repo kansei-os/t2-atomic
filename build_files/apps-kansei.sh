@@ -13,10 +13,10 @@ dnf5 -y copr enable erikreider/SwayNotificationCenter
 dnf5 -y copr enable alebastr/sway-extras
 dnf5 -y copr enable shdwchn10/AllTheTools
 dnf5 -y copr enable yalter/niri
-dnf5 -y copr enable gloriouseggroll/nobara-42
+
 
 #### greeters, login things
-dnf5 -y --setopt=install_weak_deps=False install greetd greetd-selinux tuigreet gtkgreet seatd
+dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
 
 #### wayland wm environment
 dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
@@ -53,9 +53,13 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
   libtirpc-devel python3-openidc-client cosmic-store cosmic-files \
    cosmic-edit cosmic-settings cosmic-settings-daemon dmg2img stow \
    topgrade niri wayvnc unrar cosmic-session cosmic-wallpapers \
-   fastfetch sway-wallpapers wodim brasero webapp-manager
+   fastfetch sway-wallpapers wodim brasero
 
-dnf5 -y remove firefox firefox-langpacks
+dnf5 copr enable kylegospo/webapp-manager
+dnf5 -y install webapp-manager
+
+
+
 #flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 #flatpak install -y org.mozilla.firefox
 #flatpak install -y org.kde.kalm
@@ -63,3 +67,9 @@ dnf5 -y remove firefox firefox-langpacks
 dnf5 -y config-manager addrepo --overwrite --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 -y install tailscale
 systemctl enable tailscaled.service
+
+dnf5 -y copr disable erikreider/SwayNotificationCenter
+dnf5 -y copr disable alebastr/sway-extras
+dnf5 -y copr disable shdwchn10/AllTheTools
+dnf5 -y copr disable yalter/niri
+dnf5 -y copr disable kylegospo/webapp-manager
