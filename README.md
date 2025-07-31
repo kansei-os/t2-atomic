@@ -1,17 +1,25 @@
 # T2-Atomic (bootc)
 Fedora/CentOS Desktop Images, built for T2 Macs, with transactional upgrades and rollbacks, delivered using OCI/container images. **Now with more [bootc](https://bootc-dev.github.io/bootc/)**.
-## Not Installable at this time
-Do not attempt install just yet. We're just getting kicked off, getting the infrastructure in place to support transitioning existing T2-Atomic users to bootc. We hope to have an installable image by early July 2025. Thanks for your patience and support! 
+## Alpha-state Project
+* There are a couple routes possible to install T2-Atomic. Unfortunately, until we can find a way to load the t2linux kernel during the ISO install process, the install needs to be performed without use of the internal keyboard/trackpad on MacBooks. The installation is performed offline, and on first boot the t2linux kernel, wifi/bt firmware, and other essential tooling for the best T2 experience possible will all be in place.
+* If you're command line comfortable, you can use an existing ISO, and "bootc switch" to T2-Atomic. For this, download the ISO of Bazzite, Bluefin, Silverblue, and proceed to install with an external keyboard and mousing device. Note that if you select to encrypt your data (you should) during install, you won't be able to use the internal keyboard to type the unlock passphrase until the t2linux kernel is installed. Keep the external keyboard handy until you know you're in the clear.
+  * on first boot post-install, open a terminal window and "sudo bootc switch [image URI]" where the URI is one of:
+    *  ghcr.io/kansei-os/t2-atomic-silverblue:latest
+    *  ghcr.io/kansei-os/t2-atomic-bazzite:latest
+    *  ghcr.io/kansei-os/t2-atomic-bluefin:latest
+  *  Additional images may be available, check the [packages for this repo](https://github.com/orgs/kansei-os/packages?repo_name=t2-atomic) for more info.
+* Upcoming: when we have ISOs ready to publish, you'll be able to download them here for an easier installation. At this time it'll still require the external input devices during install, but on first boot all the hardware that can be enabled will be. There won't be any need to use the command line to get set up if you're using a full desktop environment such as Plasma on Bazzite, Gnome on Bluefin, or Gnome on Silverblue.
 
 #### Do you have a T2 Mac? 
 This is the last Intel generation of most models before the Apple Silicon transition. Including models like the 2018-2019 MacBook Pro 13", the 2019 MacBook Pro 16", and some Mac Minis and iMacs. Sadly many of these models have already been dropped from support from the upcoming Mac OS 26 Tahoe (coming fall 2025). Apple would prefer if you traded in on some fresh Apple Silicon, but for those of us who love how Linux can breathe fresh life into "old" hardware, these computers can still make great workstations for years to come, with the latest open source packages (while Apple sunsets rosetta2 for no reason other than they want to). 
 For a more comprehensive list of T2 Macs see [the wiki](https://github.com/kansei-os/t2-atomic/wiki/T2-Hardware)
 
 #### Do you want to use a Fedora Silverblue or another Atomic desktop on your T2 Mac?
-If you've wanted to use Fedora Silverblue, Sway Atomic, or similar but ran into the trouble of them not being operational on your T2 Mac, you've come to the right place. This repository intends to deliver Fedora Atomic Desktop images like Silverblue, as well as custom images of Universal Blue's popular Bluefin and Bazzite, customized for T2 Macs, using bootc. This is effectively a fork of [T2 Atomic](https://github.com/lauretano/t2-atomic/), which is based on rpm-ostree and blue-build.org tooling.
+If you've wanted to use Universal Blue's popular Bazzite and Bluefin images, or Fedora Silverblue, Sway Atomic, or similar but ran into the trouble of them not being operational on your T2 Mac, you've come to the right place. This repository builds a variety of Fedora Atomic Desktop images, customized for T2 Macs, using bootc. This is effectively a fork of [T2 Atomic](https://github.com/lauretano/t2-atomic/), which was based on rpm-ostree and blue-build.org tooling.
 
-# Upcoming
-Our first bootc test image is derived from the official Fedora bootc base image (aka Silverblue). We'll also add support for Universal Blue images like Bazzite, Bluefin, and Aurora --with a little bit of work, they have some additional packages we may need to modify/remove to ensure compatibility with the T2 kernel. Even a Centos Stream bootc image is possible.
+# Upcoming Features Planned
+* wifi/bluetooth firmware via customized script that generates a sysext (systemd-sysext) to "bolt on" the firmware. This will allow more flexibility for those who may not want to run more proprietary code than necessary.
+* more image variants
 
 ### Fake FAQ until real Q's are A'd:
 #### Why Atomic / Immutable / bootc?
