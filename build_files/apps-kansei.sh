@@ -5,6 +5,7 @@ set -ouex pipefail
 ### remove some things we don't need
 dnf5 -y remove gnome-classic-session
 dnf5 -y remove firefox firefox-langpacks
+dnf5 -y remove chromium
 
 
 ### Install packages
