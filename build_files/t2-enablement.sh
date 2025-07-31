@@ -45,10 +45,6 @@ dnf5 -y copr disable sharpenedblade/t2linux
 # and cli apps to access hardware sensors
 dnf5 install -y lm_sensors sg3_utils wodim xorriso
 
-# installing radio software
-mkdir -p /lib/firmware/brcm
-tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
-
 # applying some T2 customizations
 systemctl mask suspend.target
 systemctl enable t2fanrd.service
