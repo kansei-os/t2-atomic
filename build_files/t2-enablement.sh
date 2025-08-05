@@ -34,6 +34,7 @@ dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install ker
 #    kernel-tools kernel-tools-libs \
 
 dnf5 -y install t2fanrd t2linux-audio
+rm -f /usr/share/pipewire/pipewire.conf.d/raop.conf
 
 # remove packages from fedora image macs don't need
 dnf5 -y remove tiwilink-firmware nxpwireless-firmware nvidia-gpu-firmware mt7xxx-firmware iwlegacy-firmware \
