@@ -46,7 +46,13 @@ dnf5 -y copr disable sharpenedblade/t2linux
 dnf5 install -y lm_sensors sg3_utils wodim xorriso
 
 # install IWD and radio software
+# iwd as backend seems to work better than wpa_supplicant on this hardware
 dnf swap -y wpa_supplicant iwd
+cat >> /etc/NetworkManager/conf.d/iwd.conf << EOF
+[device]
+wifi.backend=iwd
+EOF
+
 mkdir -p /lib/firmware/brcm
 tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
 
@@ -58,11 +64,9 @@ dnf5 install -y fedora-release-ostree-desktop
 
 dnf clean all
 
-#regen initramfs after kernel install
-#set -x; kver=$(cd /usr/lib/modules && echo *); dracut -vf /usr/lib/modules/$kver/initramfs.img $kver
-#set -x; dracut -vf /usr/lib/modules/$kver/initramfs.img $kver
+#regen initramfs after kernel install. this is required for 
+# the internal keyboard to be usable for early boot (disk unlock)
 
 KERNEL_VERSION="$(rpm -q --queryformat="%{EVR}.%{ARCH}" kernel-core)"
-
 export DRACUT_NO_XATTR=1
 /usr/bin/dracut --no-hostonly --kver "$KERNEL_VERSION" --reproducible --zstd -v --add ostree -f "/lib/modules/$KERNEL_VERSION/initramfs.img"
