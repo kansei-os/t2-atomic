@@ -45,7 +45,8 @@ dnf5 -y copr disable sharpenedblade/t2linux
 # and cli apps to access hardware sensors
 dnf5 install -y lm_sensors sg3_utils wodim xorriso
 
-# installing radio software
+# install IWD and radio software
+dnf swap -y wpa_supplicant iwd
 mkdir -p /lib/firmware/brcm
 tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
 
