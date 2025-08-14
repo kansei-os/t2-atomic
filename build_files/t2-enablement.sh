@@ -38,7 +38,7 @@ rm -f /usr/share/pipewire/pipewire.conf.d/raop.conf
 
 # remove packages from fedora image macs don't need
 dnf5 -y remove tiwilink-firmware nxpwireless-firmware nvidia-gpu-firmware mt7xxx-firmware iwlegacy-firmware \
-  iwlwifi-dvm-firmware iwlwifi-mvm-firmware
+  iwlwifi-dvm-firmware iwlwifi-mvm-firmware qcom-wwan-firmware
 dnf5 -y copr disable sharpenedblade/t2linux
 
 # installing some packages for full support of apple ecosystem,
@@ -65,7 +65,7 @@ dnf5 install -y fedora-release-ostree-desktop
 
 dnf clean all
 
-#regen initramfs after kernel install. this is required for 
+#regen initramfs after kernel install. this is required for
 # the internal keyboard to be usable for early boot (disk unlock)
 
 KERNEL_VERSION="$(rpm -q --queryformat="%{EVR}.%{ARCH}" kernel-core)"
