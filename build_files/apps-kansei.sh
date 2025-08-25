@@ -56,6 +56,10 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
    topgrade niri wayvnc unrar cosmic-session cosmic-wallpapers \
    fastfetch sway-wallpapers wodim brasero
 
+dnf5 -y copr enable ublue-os/packages
+dnf5 -y config-manager --set-disabled "copr:copr.fedorainfracloud.org:ublue-os:packages"
+dnf5 -y --enablerepo copr:copr.fedorainfracloud.org:ublue-os:packages install ublue-brew
+
 dnf5 -y copr enable kylegospo/webapp-manager
 dnf5 -y install webapp-manager
 
