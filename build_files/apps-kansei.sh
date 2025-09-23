@@ -14,7 +14,7 @@ dnf5 -y copr enable erikreider/SwayNotificationCenter
 dnf5 -y copr enable alebastr/sway-extras
 dnf5 -y copr enable shdwchn10/AllTheTools
 dnf5 -y copr enable yalter/niri
-
+dnf5 -y copr enable solopasha/hyprland
 
 #### greeters, login things
 dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
@@ -82,3 +82,4 @@ dnf5 -y copr disable alebastr/sway-extras
 dnf5 -y copr disable shdwchn10/AllTheTools
 dnf5 -y copr disable yalter/niri
 dnf5 -y copr disable kylegospo/webapp-manager
+dnf5 -y copr disable solopasha/hyprland
