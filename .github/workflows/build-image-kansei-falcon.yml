@@ -1,5 +1,5 @@
 ---
-name: Build Image - kansei falcon spin
+name: Build Image - falcon (kansei) spin
 on:
   #pull_request:
   #  branches:
