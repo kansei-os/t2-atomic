@@ -34,7 +34,6 @@ dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install ker
 #    kernel-tools kernel-tools-libs \
 
 dnf5 -y install t2linux-release #per sharpenedblade this will continue as the metapackage to include all the t2 parts
-dnf5 -y remove tiny-dfr #touchbar works fine now without
 rm -f /usr/share/pipewire/pipewire.conf.d/raop.conf
 
 # remove packages from fedora image macs don't need
