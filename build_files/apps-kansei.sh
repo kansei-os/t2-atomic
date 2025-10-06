@@ -54,7 +54,7 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
   libtirpc-devel python3-openidc-client cosmic-store cosmic-files \
    cosmic-edit cosmic-settings cosmic-settings-daemon dmg2img stow \
    topgrade niri wayvnc unrar cosmic-session cosmic-wallpapers \
-   fastfetch sway-wallpapers wodim brasero
+   fastfetch sway-wallpapers wodim brasero node-exporter
 
 dnf5 -y install hyprland xdg-desktop-portal-hyprland grim slurp wlogout \
     hyprcursor hyprutils hyprlang hyprpolkitagent hyprshot hypridle \
