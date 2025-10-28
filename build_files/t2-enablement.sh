@@ -24,8 +24,8 @@ dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-uki-
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
 dnf5 -y versionlock delete kernel kernel-core kernel-modules \
   kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
-dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel kernel-core \
-  kernel-modules kernel-modules-core kernel-tools kernel-tools-libs
+dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel \
+  kernel-modules kernel-tools kernel-tools-libs
 
 #rpm-ostree override replace --experimental \
 #    --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
