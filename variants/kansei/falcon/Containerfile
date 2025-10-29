@@ -4,7 +4,7 @@ COPY build_files /
 
 # Base Image
 #FROM quay.io/fedora/fedora-bootc:42
-FROM ghcr.io/ublue-os/bazzite-gnome-nvidia:testing
+FROM ghcr.io/ublue-os/bazzite-gnome-nvidia:stable
 #FROM ghcr.io/ublue-os/bazzite-nvidia:testing
 
 ## Additional base images such as:
