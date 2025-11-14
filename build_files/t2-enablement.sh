@@ -24,6 +24,9 @@ dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-uki-
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
 dnf5 -y versionlock delete kernel kernel-core kernel-modules \
   kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
+if ! grep -q layout=ostree /usr/lib/kernel/install.conf; then
+    echo layout=ostree >> /usr/lib/kernel/install.conf
+fi
 dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel \
   kernel-modules kernel-tools kernel-tools-libs
 
@@ -62,6 +65,8 @@ systemctl mask suspend.target
 systemctl enable t2fanrd.service
 
 dnf5 install -y fedora-release-ostree-desktop
+
+ls -ald /usr/lib/modules/*
 
 dnf clean all
 
