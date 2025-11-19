@@ -19,18 +19,17 @@ set -ouex pipefail
 # dnf5 -y copr disable ublue-os/
 dnf5 -y install dnf5-plugins python3-jsonschema
 dnf5 -y copr enable sharpenedblade/t2linux
-dnf5 -y remove kernel kernel-core kernel-modules kernel-modules-core kernel-uki-virt kernel-modules-extra \
-  kernel-headers kernel-tools kernel-tools-libs
+dnf5 -y remove kernel-uki-virt
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
-dnf5 -y versionlock delete kernel kernel-core kernel-modules \
-  kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
+#dnf5 -y versionlock delete kernel kernel-core kernel-modules \
+#  kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
 if ! grep -q layout=ostree /usr/lib/kernel/install.conf; then
     echo layout=ostree >> /usr/lib/kernel/install.conf
 fi
 #dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel \
 #  kernel-modules kernel-tools kernel-tools-libs
-
-rpm-ostree override replace --experimental --freeze \
+rpm-ostree cliwrap install-to-root / && \
+    rpm-ostree override replace --experimental --freeze \
     --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
     kernel kernel-core \
     kernel-modules kernel-modules-core \
@@ -72,7 +71,7 @@ dnf clean all
 
 #regen initramfs after kernel install. this is required for
 # the internal keyboard to be usable for early boot (disk unlock)
-
+echo "post-kernel dracut run for early boot keyboard suppport on T2"
 KERNEL_VERSION="$(rpm -q --queryformat="%{EVR}.%{ARCH}" kernel-core)"
 export DRACUT_NO_XATTR=1
 /usr/bin/dracut --no-hostonly --kver "$KERNEL_VERSION" --reproducible --zstd -v --add ostree -f "/lib/modules/$KERNEL_VERSION/initramfs.img"
