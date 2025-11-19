@@ -71,7 +71,7 @@ dnf clean all
 
 #regen initramfs after kernel install. this is required for
 # the internal keyboard to be usable for early boot (disk unlock)
-echo "post-kernel dracut run for early boot keyboard suppport on T2"
-KERNEL_VERSION="$(rpm -q --queryformat="%{EVR}.%{ARCH}" kernel-core)"
-export DRACUT_NO_XATTR=1
-/usr/bin/dracut --no-hostonly --kver "$KERNEL_VERSION" --reproducible --zstd -v --add ostree -f "/lib/modules/$KERNEL_VERSION/initramfs.img"
+#echo "post-kernel dracut run for early boot keyboard suppport on T2"
+#KERNEL_VERSION="$(rpm -q --queryformat="%{EVR}.%{ARCH}" kernel-core)"
+#export DRACUT_NO_XATTR=1
+#/usr/bin/dracut --no-hostonly --kver "$KERNEL_VERSION" --reproducible --zstd -v --add ostree -f "/lib/modules/$KERNEL_VERSION/initramfs.img"
