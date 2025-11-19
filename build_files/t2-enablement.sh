@@ -27,14 +27,14 @@ dnf5 -y versionlock delete kernel kernel-core kernel-modules \
 if ! grep -q layout=ostree /usr/lib/kernel/install.conf; then
     echo layout=ostree >> /usr/lib/kernel/install.conf
 fi
-dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel \
-  kernel-modules kernel-tools kernel-tools-libs
+#dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel \
+#  kernel-modules kernel-tools kernel-tools-libs
 
-#rpm-ostree override replace --experimental \
-#    --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
-#    kernel kernel-core \
-#    kernel-modules kernel-modules-core \
-#    kernel-tools kernel-tools-libs \
+rpm-ostree override replace --experimental --freeze \
+    --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
+    kernel kernel-core \
+    kernel-modules kernel-modules-core \
+    kernel-modules-extra \
 
 dnf5 -y install t2linux-release #per sharpenedblade this will continue as the metapackage to include all the t2 parts
 rm -f /usr/share/pipewire/pipewire.conf.d/raop.conf
