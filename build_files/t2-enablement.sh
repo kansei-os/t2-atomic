@@ -19,7 +19,7 @@ set -ouex pipefail
 # dnf5 -y copr disable ublue-os/
 dnf5 -y install dnf5-plugins python3-jsonschema
 dnf5 -y copr enable sharpenedblade/t2linux
-dnf5 -y remove kernel-uki-virt
+dnf5 -y remove kernel-uki-virt kmod-framework-laptop
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
 #dnf5 -y versionlock delete kernel kernel-core kernel-modules \
 #  kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
