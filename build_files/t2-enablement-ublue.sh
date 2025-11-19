@@ -39,7 +39,7 @@ rpm-ostree cliwrap install-to-root / && \
     kernel-modules-extra \
     kernel-devel kernel-devel-matched
 
-dnf5 -y install t2linux-release #per sharpenedblade this will continue as the metapackage to include all the t2 parts
+dnf5 -y install t2fanrd t2linux-release #per sharpenedblade this will continue as the metapackage to include all the t2 parts
 rm -f /usr/share/pipewire/pipewire.conf.d/raop.conf
 
 # remove packages from fedora image macs don't need
