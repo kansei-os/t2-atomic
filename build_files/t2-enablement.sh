@@ -50,7 +50,7 @@ dnf5 install -y lm_sensors sg3_utils wodim xorriso
 
 # install IWD and radio software
 # iwd as backend seems to work better than wpa_supplicant on this hardware
-dnf swap -y wpa_supplicant iwd
+dnf5 swap -y wpa_supplicant iwd
 cat >> /etc/NetworkManager/conf.d/iwd.conf << EOF
 [device]
 wifi.backend=iwd
