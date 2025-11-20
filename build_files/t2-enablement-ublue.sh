@@ -19,7 +19,9 @@ set -ouex pipefail
 # dnf5 -y copr disable ublue-os/
 dnf5 -y install dnf5-plugins python3-jsonschema
 dnf5 -y copr enable sharpenedblade/t2linux
-dnf5 -y remove kernel-uki-virt kmod-framework-laptop
+dnf5 -y remove kmod-framework-laptop \
+    kmod-openrazer kmod-xone \
+    kernel-modules-akmods kmod-v4l2loopback
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
 #dnf5 -y versionlock delete kernel kernel-core kernel-modules \
 #  kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
@@ -31,9 +33,11 @@ fi
 rpm-ostree cliwrap install-to-root / && \
     rpm-ostree override replace --experimental --freeze \
     --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
+    kernel-uki-virt \
     kernel kernel-core \
     kernel-modules kernel-modules-core \
     kernel-modules-extra \
+    kernel-devel kernel-devel-matched
 
 dnf5 -y install t2fanrd t2linux-release #per sharpenedblade this will continue as the metapackage to include all the t2 parts
 rm -f /usr/share/pipewire/pipewire.conf.d/raop.conf

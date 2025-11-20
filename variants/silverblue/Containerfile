@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/silverblue-main:42
+FROM ghcr.io/ublue-os/silverblue-main:43
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
@@ -24,8 +24,9 @@ COPY --chmod=0644 /variants/common/etc/ /etc/
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
-    --mount=type=tmpfs,dst=/tmp \
+    --mount=type=tmpfs,dst=/var \
     /ctx/t2-enablement.sh && \
+    rm -rf /tmp/* /var/tmp/* && \
     ostree container commit
 
 ### LINTING
