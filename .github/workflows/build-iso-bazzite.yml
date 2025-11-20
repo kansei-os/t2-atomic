@@ -9,6 +9,7 @@ on:
         default: false
         type: boolean
       platform:
+        description: "CPU platform"
         required: true
         type: choice
         options:
