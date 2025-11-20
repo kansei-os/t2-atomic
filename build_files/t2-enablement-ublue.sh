@@ -38,7 +38,7 @@ rpm-ostree cliwrap install-to-root / && \
     kernel-modules kernel-modules-core \
     kernel-modules-extra \
     kernel-devel kernel-devel-matched \
-    kernel-tools-libs
+    kernel-tools kernel-tools-libs
 
 dnf5 -y install t2fanrd t2linux-release #per sharpenedblade this will continue as the metapackage to include all the t2 parts
 rm -f /usr/share/pipewire/pipewire.conf.d/raop.conf
