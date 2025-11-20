@@ -11,9 +11,9 @@ To protect your working deployment in the event you need to roll back, open a te
 - You'll be running the bootc switch command, and will need to select an image to migrate to, based on the image you're currently running. Most of the image names have carried over. That is, ghcr.io/lauretano/t2-atomic-bluefin:latest becomes ghcr.io/kansei-os/t2-atomic-bluefin:latest. 
 
 open a terminal window and "sudo bootc switch [image URI]" where the URI is one of:
-    *  ghcr.io/kansei-os/t2-atomic-silverblue:latest
-    *  ghcr.io/kansei-os/t2-atomic-bazzite:latest
-    *  ghcr.io/kansei-os/t2-atomic-bluefin:latest
+  *  ghcr.io/kansei-os/t2-atomic-silverblue:latest
+  *  ghcr.io/kansei-os/t2-atomic-bazzite:latest
+  *  ghcr.io/kansei-os/t2-atomic-bluefin:latest
   *  Additional images may be available, check the [packages for this repo](https://github.com/orgs/kansei-os/packages?repo_name=t2-atomic) for more info.
   
 - Bootc will download layers and chunks as needed (a few gigabytes) and process the transaction. It'll show progress as the download happens. If all goes well, the update will be staged for the next reboot.
