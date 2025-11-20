@@ -44,9 +44,10 @@ dnf5 -y install thunar thunar-archive-plugin thunar-volman \
 dnf5 -y install fontawesome-fonts-all gnome-themes-extra \
   gnome-icon-theme paper-icon-theme breeze-icon-theme \
   papirus-icon-theme google-noto-emoji-fonts \
-  SwayNotificationCenter swww cascadia-fonts-all mozilla-fira-sans-fonts \
-  mozilla-fira-mono-fonts jetbrains-mono-fonts-all ibm-plex-fonts-all \
+  SwayNotificationCenter swww cascadia-fonts-all \
+  jetbrains-mono-fonts-all ibm-plex-fonts-all \
   adwaita-gtk2-theme adw-gtk3-theme qt5-qtwayland qt6-qtwayland
+  # rip f43 mozilla-fira-sans-fonts and mozilla-fira-mono-fonts
 
 #### kansei spin
 dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
