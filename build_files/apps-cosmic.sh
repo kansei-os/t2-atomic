@@ -20,9 +20,9 @@ dnf5 -y install cosmic-session cosmic-wallpapers
 dnf5 -y install tuned tuned-ppd
 
 #### sound networking etc
-dnf5 -y install helvum network-manager-applet \
+dnf5 --skip-unavailable -y install helvum network-manager-applet \
 NetworkManager-openvpn NetworkManager-openconnect \
-bluez bluez-tools blueman poweralertd
+bluez bluez-tools blueman
 
 #### T2 and such
 dnf5 -y install fastfetch wodim brasero node-exporter
