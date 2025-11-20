@@ -1,11 +1,11 @@
 ---
-name: Build container image - bluefin spin
+name: Build Image - Bluefin Latest
 on:
   pull_request:
     branches:
       - main
   schedule:
-    - cron: '30 10 * * *'  # 10:05am UTC everyday
+    - cron: "30 10 * * *" # 10:05am UTC everyday
   #push:
   #  branches:
   #    - main
@@ -16,9 +16,9 @@ on:
 env:
   IMAGE_DESC: "T2-Atomic Bluefin"
   IMAGE_KEYWORDS: "bootc,ublue,universal-blue"
-  IMAGE_LOGO_URL: "https://avatars.githubusercontent.com/u/120078124?s=200&v=4"  # Put your own image here for a fancy profile on https://artifacthub.io/!
-  IMAGE_NAME: "${{ github.event.repository.name }}-bluefin"  # output image name, usually same as repo name
-  IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
+  IMAGE_LOGO_URL: "https://avatars.githubusercontent.com/u/120078124?s=200&v=4" # Put your own image here for a fancy profile on https://artifacthub.io/!
+  IMAGE_NAME: "${{ github.event.repository.name }}-bluefin" # output image name, usually same as repo name
+  IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}" # do not edit
   DEFAULT_TAG: "latest"
 
 concurrency:

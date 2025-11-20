@@ -1,5 +1,5 @@
 ---
-name: Build container image - kansei spin
+name: Build Image - Kansei (personal) spin
 on:
   pull_request:
     branches:

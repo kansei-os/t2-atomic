@@ -1,5 +1,5 @@
 ---
-name: Build container image - aurora spin
+name: Build Image - Aurora
 on:
   pull_request:
     branches:

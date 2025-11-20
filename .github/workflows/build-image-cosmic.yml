@@ -1,5 +1,5 @@
 ---
-name: Build container image - cosmic atomic spin
+name: Build Image - COSMIC
 on:
   pull_request:
     branches:
