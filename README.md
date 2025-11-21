@@ -6,7 +6,11 @@ Fedora/CentOS Desktop Images, built for T2 Macs, with transactional upgrades and
   * on first boot post-install, open a terminal window and "sudo bootc switch [image URI]" where the URI is one of:
     *  ghcr.io/kansei-os/t2-atomic-silverblue:latest
     *  ghcr.io/kansei-os/t2-atomic-bazzite:latest
+    *  ghcr.io/kansei-os/t2-atomic-bazzite-gnome:latest
+    *  ghcr.io/kansei-os/t2-atomic-cosmic:latest
     *  ghcr.io/kansei-os/t2-atomic-bluefin:latest
+    *  ghcr.io/kansei-os/t2-atomic-bluefin-dx:latest
+    *  ghcr.io/kansei-os/t2-atomic-aurora:latest
   *  Additional images may be available, check the [packages for this repo](https://github.com/orgs/kansei-os/packages?repo_name=t2-atomic) for more info.
 * Upcoming: when we have ISOs ready to publish, you'll be able to download them here for an easier installation. At this time it'll still require the external input devices during install, but on first boot all the hardware that can be enabled will be. There won't be any need to use the command line to get set up if you're using a full desktop environment such as Plasma on Bazzite, Gnome on Bluefin, or Gnome on Silverblue.
 
