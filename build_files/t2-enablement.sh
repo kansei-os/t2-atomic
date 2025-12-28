@@ -46,7 +46,7 @@ dnf5 -y copr disable sharpenedblade/t2linux
 # installing some packages for full support of apple hardware,
 # like sg3_utils to support USB superdrive slot load operation,
 # and cli apps to access hardware sensors
-dnf5 install -y lm_sensors sg3_utils wodim xorriso radeontop radeon-profile
+dnf5 install -y lm_sensors sg3_utils wodim xorriso radeontop
 
 # install IWD and radio software
 # iwd as backend seems to work better than wpa_supplicant on this hardware
