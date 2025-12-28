@@ -43,10 +43,10 @@ dnf5 -y remove tiwilink-firmware nxpwireless-firmware nvidia-gpu-firmware mt7xxx
   iwlwifi-dvm-firmware iwlwifi-mvm-firmware qcom-wwan-firmware
 dnf5 -y copr disable sharpenedblade/t2linux
 
-# installing some packages for full support of apple ecosystem,
+# installing some packages for full support of apple hardware,
 # like sg3_utils to support USB superdrive slot load operation,
 # and cli apps to access hardware sensors
-dnf5 install -y lm_sensors sg3_utils wodim xorriso
+dnf5 install -y lm_sensors sg3_utils wodim xorriso radeontop radeon-profile
 
 # install IWD and radio software
 # iwd as backend seems to work better than wpa_supplicant on this hardware
