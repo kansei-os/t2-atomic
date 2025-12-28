@@ -24,7 +24,7 @@ dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
   polkit xfce-polkit xdg-user-dirs dbus-tools dbus-daemon \
   wl-clipboard pavucontrol playerctl  vulkan-validation-layers \
   vulkan-tools gnome-disk-utility ddcutil waycheck wlogout \
-  xwayland-satellite fuzzel rofi-wayland
+  xwayland-satellite fuzzel rofi-wayland nwg-bar
 
 #### sound networking etc
 dnf5 -y install helvum network-manager-applet \
