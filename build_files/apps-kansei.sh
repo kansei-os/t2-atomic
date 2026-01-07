@@ -56,7 +56,7 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
    cosmic-edit cosmic-settings cosmic-settings-daemon dmg2img stow \
    topgrade niri wayvnc unrar cosmic-session cosmic-wallpapers \
    fastfetch sway-wallpapers wodim brasero node-exporter btop syncthing \
-   greenboot-rs greenboot-default-health-checks
+   greenboot-default-health-checks greenboot
 
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
