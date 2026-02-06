@@ -15,6 +15,7 @@ dnf5 -y copr enable alebastr/sway-extras
 dnf5 -y copr enable shdwchn10/AllTheTools
 dnf5 -y copr enable yalter/niri
 dnf5 -y copr enable solopasha/hyprland
+dnf5 -y copr enable alternateved/keyd
 
 #### greeters, login things
 dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
@@ -56,7 +57,7 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
    cosmic-edit cosmic-settings cosmic-settings-daemon dmg2img stow \
    topgrade niri wayvnc unrar cosmic-session cosmic-wallpapers \
    fastfetch sway-wallpapers wodim brasero node-exporter btop syncthing \
-   greenboot-default-health-checks greenboot
+   greenboot-default-health-checks greenboot keyd
 
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
@@ -81,3 +82,5 @@ dnf5 -y copr disable shdwchn10/AllTheTools
 dnf5 -y copr disable yalter/niri
 dnf5 -y copr disable kylegospo/webapp-manager
 dnf5 -y copr disable solopasha/hyprland
+dnf5 -y copr disable alternateved/keyd
+dnf5 -y copr disable ublue-os/packages
