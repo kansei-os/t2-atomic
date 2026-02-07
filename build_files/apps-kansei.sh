@@ -26,7 +26,9 @@ dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
   podman-compose podman-machine podman-tui powerstat cockpit-system \
   cockpit-ostree cockpit-selinux cockpit-networkmanager \
   system-config-printer thermald zram-generator-defaults gnome-keyring-pam \
-  gnome-keyring libsecret rtkit
+  gnome-keyring libsecret rtkit time smartmontools-selinux setools-console \
+  sane-backends osbuild-selinux NetworkManager-wifi \
+  NetworkManager-config-connectivity-fedora
 
 #### wayland wm environment
 dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
@@ -55,7 +57,7 @@ dnf5 -y install nautilus thunar thunar-archive-plugin thunar-volman \
 #### cli utils
 dnf5 -y install curl ffmpeg ffmpegthumbnailer fzf rsync zsh unrar-free xz wodim git cdrecord cdda2wav \
   btop greenboot greenboot-default-health-checks fastfetch dmg2img stow vim \
-  tmux mc s-tui starship powertop grub2-tools-extra mkisofs wget2
+  tmux mc s-tui starship powertop grub2-tools-extra mkisofs wget2 bash-color-prompt
 
 
 #### theming, fonts
