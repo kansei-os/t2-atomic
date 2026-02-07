@@ -47,7 +47,7 @@ dnf5 -y install nautilus thunar thunar-archive-plugin thunar-volman \
   xarchiver imv p7zip unrar gvfs-mtp gvfs-gphoto2 gvfs-smb \
   gvfs-nfs gvfs-fuse gvfs-archive android-tools slurp grim \
   waybar dunst alacritty foot swayimg cups-pdf wf-recorder \
-  SwayNotificationCenter swww papers-nautilus papers-previwer \
+  SwayNotificationCenter swww papers-nautilus papers-previewer \
   papers-thumbnailer
 
 #### cli utils
