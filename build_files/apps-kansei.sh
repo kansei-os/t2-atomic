@@ -22,7 +22,7 @@ dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
 
 #### basic system things
 dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
-  plymouth-plugin-label plymouth-plugin-two-step \
+  glibc-langpack-en plymouth-plugin-label plymouth-plugin-two-step \
   podman-compose podman-machine podman-tui powerstat cockpit-system \
   cockpit-ostree cockpit-selinux cockpit-networkmanager \
   system-config-printer thermald zram-generator-defaults
@@ -54,7 +54,7 @@ dnf5 -y install nautilus thunar thunar-archive-plugin thunar-volman \
 #### cli utils
 dnf5 -y install curl ffmpeg ffmpegthumbnailer fzf rsync zsh unrar-free xz wodim git cdrecord cdda2wav \
   btop greenboot greenboot-default-health-checks fastfetch dmg2img stow vim \
-  tmux mc s-tui powertop grub2-tools-extra mkisofs wget2
+  tmux mc s-tui starship powertop grub2-tools-extra mkisofs wget2
 
 
 #### theming, fonts
