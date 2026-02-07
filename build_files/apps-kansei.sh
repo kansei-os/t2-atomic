@@ -21,10 +21,11 @@ dnf5 -y copr enable alternateved/keyd
 dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
 
 #### basic system things
-dnf5 -y install bolt firewalld firewall-config fuse plymouth-theme-spinner \
-  plymouth-plugin-label plymouth-plugin-two-step podman-compose podman-machine \
-  podman-tui powerstat cockpit-system cockpit-ostree cockpit-selinux \
-  cockpit-networkmanager zram-generator-defaults
+dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
+  plymouth-plugin-label plymouth-plugin-two-step \
+  podman-compose podman-machine podman-tui powerstat cockpit-system \
+  cockpit-ostree cockpit-selinux cockpit-networkmanager \
+  system-config-printer thermald zram-generator-defaults
 
 #### wayland wm environment
 dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
@@ -51,27 +52,30 @@ dnf5 -y install nautilus thunar thunar-archive-plugin thunar-volman \
   papers-thumbnailer
 
 #### cli utils
-dnf5 -y install curl fzf rsync zsh unrar-free xz wodim
+dnf5 -y install curl ffmpeg ffmpegthumbnailer fzf rsync zsh unrar-free xz wodim git cdrecord cdda2wav \
+  btop greenboot greenboot-default-health-checks fastfetch dmg2img stow vim \
+  tmux mc s-tui powertop grub2-tools-extra mkisofs wget2
 
 
 #### theming, fonts
 dnf5 -y install adobe-source-code-pro-fonts adwaita-fonts-all \
   adwaita-gtk2-theme adw-gtk3-theme breeze-icon-theme cascadia-fonts-all \
-  desktop-backgrounds-gnome fedora-workstation-backgrounds \
-  fontawesome-fonts-all google-noto-color-emoji-fonts google-noto-emoji-fonts \
+  cosmic-wallpapers default-fonts desktop-backgrounds-gnome \
+  fedora-workstation-backgrounds fontawesome-fonts-all \
+  google-noto-color-emoji-fonts google-noto-emoji-fonts \
   gnome-themes-extra gnome-icon-theme ibm-plex-fonts-all \
   jetbrains-mono-fonts-all paper-icon-theme  \
-  papirus-icon-theme qt5-qtwayland qt6-qtwayland
+  papirus-icon-theme plymouth-theme-spinner plymouth-system-theme \
+  qt5-qtwayland qt6-qtwayland sway-wallpapers \
   # rip f43 mozilla-fira-sans-fonts and mozilla-fira-mono-fonts
 
 #### kansei spin
 dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
-  s-tui mc powertop sysprof-cli tmux vim fedora-easy-karma gcc make \
-  libtirpc-devel python3-openidc-client cosmic-store cosmic-files \
-   cosmic-edit cosmic-settings cosmic-settings-daemon dmg2img stow \
-   topgrade niri wayvnc unrar cosmic-session cosmic-wallpapers \
-   fastfetch sway-wallpapers wodim brasero node-exporter btop syncthing \
-   greenboot-default-health-checks greenboot keyd
+  sysprof-cli fedora-easy-karma gcc make libtirpc-devel \
+  python3-openidc-client cosmic-store cosmic-files \
+  cosmic-edit cosmic-settings cosmic-settings-daemon \
+  topgrade niri wayvnc cosmic-session brasero node-exporter \
+  syncthing keyd docker-ce-rootless-extras docker-compose-plugin \
 
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
