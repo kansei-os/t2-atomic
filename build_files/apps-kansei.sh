@@ -26,7 +26,7 @@ dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
   podman-compose podman-machine podman-tui powerstat cockpit-system \
   cockpit-ostree cockpit-selinux cockpit-networkmanager \
   system-config-printer thermald zram-generator-defaults gnome-keyring-pam \
-  gnome-keyring libsecret
+  gnome-keyring libsecret rtkit
 
 #### wayland wm environment
 dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
@@ -76,7 +76,7 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
   python3-openidc-client cosmic-store cosmic-files \
   cosmic-edit cosmic-settings cosmic-settings-daemon \
   topgrade niri wayvnc cosmic-session brasero node-exporter \
-  syncthing keyd \
+  syncthing keyd rocm-opencl rocm-runtime\
 
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
