@@ -78,7 +78,7 @@ dnf5 -y install river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
   python3-openidc-client cosmic-store cosmic-files \
   cosmic-edit cosmic-settings cosmic-settings-daemon \
   topgrade niri wayvnc cosmic-session brasero node-exporter \
-  syncthing keyd rocm-opencl rocm-runtime\
+  syncthing keyd rocm-opencl rocm-runtime distrobox
 
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
