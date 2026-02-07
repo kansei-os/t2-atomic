@@ -25,7 +25,7 @@ dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
   glibc-langpack-en plymouth-plugin-label plymouth-plugin-two-step \
   podman-compose podman-machine podman-tui powerstat cockpit-system \
   cockpit-ostree cockpit-selinux cockpit-networkmanager \
-  system-config-printer thermald zram-generator-defaults
+  system-config-printer thermald zram-generator-defaults gnome-keyring-pam
 
 #### wayland wm environment
 dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
