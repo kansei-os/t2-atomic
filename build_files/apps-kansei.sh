@@ -60,7 +60,7 @@ dnf5 -y install adobe-source-code-pro-fonts adwaita-fonts-all \
   desktop-backgrounds-gnome fedora-workstation-backgrounds \
   fontawesome-fonts-all google-noto-color-emoji-fonts google-noto-emoji-fonts \
   gnome-themes-extra gnome-icon-theme ibm-plex-fonts-all \
-  jetbrains-mono-fonts-all nerd-fonts paper-icon-theme  \
+  jetbrains-mono-fonts-all paper-icon-theme  \
   papirus-icon-theme qt5-qtwayland qt6-qtwayland
   # rip f43 mozilla-fira-sans-fonts and mozilla-fira-mono-fonts
 
