@@ -20,34 +20,48 @@ dnf5 -y copr enable alternateved/keyd
 #### greeters, login things
 dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
 
+#### basic system things
+dnf5 -y install bolt firewalld firewall-config fuse plymouth-theme-spinner \
+  plymouth-plugin-label plymouth-plugin-two-step podman-compose podman-machine \
+  podman-tui powerstat cockpit-system cockpit-ostree cockpit-selinux \
+  cockpit-networkmanager zram-generator-defaults
+
 #### wayland wm environment
 dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
   polkit xfce-polkit xdg-user-dirs dbus-tools dbus-daemon \
   wl-clipboard pavucontrol playerctl  vulkan-validation-layers \
   vulkan-tools gnome-disk-utility ddcutil waycheck wlogout \
-  xwayland-satellite fuzzel rofi-wayland nwg-bar
+  xwayland-satellite fuzzel rofi-wayland nwg-bar wev
 
 #### sound networking etc
 dnf5 -y install helvum network-manager-applet \
 NetworkManager-openvpn NetworkManager-openconnect \
-bluez bluez-tools blueman poweralertd
+bluez bluez-tools blueman poweralertd pipewire-utils pipewire-config-raop
 
 #### display
 dnf5 -y install wlr-randr wlsunset brightnessctl swaylock \
   swayidle kanshi chayang wlopm
+
 #### file manager, screenshot utils, status bar, etc
-dnf5 -y install thunar thunar-archive-plugin thunar-volman \
+dnf5 -y install nautilus thunar thunar-archive-plugin thunar-volman \
   xarchiver imv p7zip unrar gvfs-mtp gvfs-gphoto2 gvfs-smb \
   gvfs-nfs gvfs-fuse gvfs-archive android-tools slurp grim \
-  waybar dunst alacritty foot swayimg cups-pdf wf-recorder
+  waybar dunst alacritty foot swayimg cups-pdf wf-recorder \
+  SwayNotificationCenter swww papers-nautilus papers-previwer \
+  papers-thumbnailer
+
+#### cli utils
+dnf5 -y install curl fzf rsync zsh unrar-free xz wodim
+
 
 #### theming, fonts
-dnf5 -y install fontawesome-fonts-all gnome-themes-extra \
-  gnome-icon-theme paper-icon-theme breeze-icon-theme \
-  papirus-icon-theme google-noto-emoji-fonts \
-  SwayNotificationCenter swww cascadia-fonts-all \
-  jetbrains-mono-fonts-all ibm-plex-fonts-all \
-  adwaita-gtk2-theme adw-gtk3-theme qt5-qtwayland qt6-qtwayland
+dnf5 -y install adobe-source-code-pro-fonts adwaita-fonts-all \
+  adwaita-gtk2-theme adw-gtk3-theme breeze-icon-theme cascadia-fonts-all \
+  desktop-backgrounds-gnome fedora-workstation-backgrounds \
+  fontawesome-fonts-all google-noto-color-emoji-fonts google-noto-emoji-fonts \
+  gnome-themes-extra gnome-icon-theme ibm-plex-fonts-all \
+  jetbrains-mono-fonts-all nerd-fonts paper-icon-theme  \
+  papirus-icon-theme qt5-qtwayland qt6-qtwayland
   # rip f43 mozilla-fira-sans-fonts and mozilla-fira-mono-fonts
 
 #### kansei spin
