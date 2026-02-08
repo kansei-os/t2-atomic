@@ -3,7 +3,8 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM quay.io/fedora/fedora-bootc:43
+#FROM quay.io/fedora/fedora-bootc:43
+FROM quay.io/fedora/fedora-silverblue:latest
 #FROM ghcr.io/ublue-os/bluefin-dx:43
 #FROM ghcr.io/ublue-os/kinoite-main:latest
 
