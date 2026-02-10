@@ -40,7 +40,7 @@ dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
 #### sound networking etc
 dnf5 -y install helvum network-manager-applet \
 NetworkManager-openvpn NetworkManager-openconnect \
-bluez bluez-tools blueman poweralertd pipewire-utils pipewire-config-raop
+bluez bluez-tools blueman poweralertd #pipewire-utils pipewire-config-raop
 
 #### display
 dnf5 -y install wlr-randr wlsunset brightnessctl swaylock \
