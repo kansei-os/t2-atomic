@@ -28,7 +28,7 @@ dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
   system-config-printer thermald zram-generator-defaults gnome-keyring-pam \
   gnome-keyring libsecret rtkit time smartmontools-selinux setools-console \
   sane-backends osbuild-selinux NetworkManager-wifi \
-  NetworkManager-config-connectivity-fedora
+  NetworkManager-config-connectivity-fedora steam-devices
 
 #### wayland wm environment
 dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
