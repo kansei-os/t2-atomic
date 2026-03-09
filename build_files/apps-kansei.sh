@@ -28,12 +28,12 @@ dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
   system-config-printer thermald zram-generator-defaults gnome-keyring-pam \
   gnome-keyring libsecret rtkit time smartmontools-selinux setools-console \
   sane-backends osbuild-selinux NetworkManager-wifi \
-  NetworkManager-config-connectivity-fedora steam-devices
+  NetworkManager-config-connectivity-fedora steam-devices opendoas
 
 #### wayland wm environment
-dnf5 -y install tuned tuned-ppd xorg-x11-server-Xwayland \
+dnf5 -y install tuned tuned-ppd \
   polkit xfce-polkit xdg-user-dirs dbus-tools dbus-daemon \
-  wl-clipboard pavucontrol playerctl  vulkan-validation-layers \
+  wl-clipboard pavucontrol playerctl \
   vulkan-tools gnome-disk-utility ddcutil waycheck wlogout \
   xwayland-satellite fuzzel rofi-wayland nwg-bar wev
 
