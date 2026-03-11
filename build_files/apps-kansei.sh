@@ -1,4 +1,5 @@
 #!/bin/bash
+ENV LANG=C.UTF-8
 
 set -ouex pipefail
 
