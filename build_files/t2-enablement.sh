@@ -18,7 +18,8 @@ set -ouex pipefail
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/
 dnf5 -y install dnf5-plugins python3-jsonschema
-dnf5 -y copr enable sharpenedblade/t2linux
+COPR_CHROOT="fedora-$(rpm -E %fedora)-$(uname -m)"
+dnf5 -y copr enable sharpenedblade/t2linux "$COPR_CHROOT"
 dnf5 -y remove kernel-uki-virt kmod-framework-laptop
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
 #dnf5 -y versionlock delete kernel kernel-core kernel-modules \
@@ -48,16 +49,11 @@ dnf5 -y copr disable sharpenedblade/t2linux
 # and cli apps to access hardware sensors
 dnf5 install -y lm_sensors sg3_utils wodim xorriso radeontop
 
-# install IWD and radio software
-# iwd as backend seems to work better than wpa_supplicant on this hardware
-dnf5 swap -y wpa_supplicant iwd
-cat >> /etc/NetworkManager/conf.d/iwd.conf << EOF
-[device]
-wifi.backend=iwd
-EOF
-
 mkdir -p /lib/firmware/brcm
 tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
+
+curl -sL https://github.com/AdityaGarg8/Apple-Firmware/archive/refs/heads/main.tar.gz | \
+  tar xz --strip-components=4 -C /lib/firmware/brcm --wildcards '*/brcmfmac4355*'
 
 # applying some T2 customizations
 systemctl mask suspend.target
