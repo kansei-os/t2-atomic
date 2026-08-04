@@ -31,6 +31,26 @@ if ! grep -q layout=ostree /usr/lib/kernel/install.conf; then
 fi
 #dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel \
 #  kernel-modules kernel-tools kernel-tools-libs
+
+# Remove kmod packages that are tied to the System kernel (they cause depsolve conflicts
+# when we replace the kernel with the t2 kernel from the copr).
+# Add any other module packages you know are System-provided and must be replaced.
+# Debug: show installed kmod packages before kernel override
+echo "=== kmod packages currently installed ==="
+rpm -qa 'kmod-*' || true
+
+# Remove specific kmods known to pin the System kernel and cause depsolve conflicts
+# (these require kernel-uname-r = 7.1.5-ogc5.1... while we are about to install the t2 kernel).
+dnf5 -y remove kmod-evdi kmod-new-lg4ff || true
+
+# Defensive removal: remove any remaining kmod-* packages that explicitly require kernel-uname-r
+for k in $(rpm -qa 'kmod-*' 2>/dev/null || true); do
+  if rpm -q --requires "$k" 2>/dev/null | grep -q 'kernel-uname-r'; then
+    echo "Removing $k because it requires kernel-uname-r"
+    dnf5 -y remove "$k" || true
+  fi
+done
+
 rpm-ostree cliwrap install-to-root / && \
     rpm-ostree override replace --experimental --freeze \
     --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
