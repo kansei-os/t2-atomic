@@ -15,7 +15,7 @@ dnf5 -y copr enable erikreider/SwayNotificationCenter
 dnf5 -y copr enable alebastr/sway-extras
 dnf5 -y copr enable shdwchn10/AllTheTools
 dnf5 -y copr enable yalter/niri
-dnf5 -y copr enable solopasha/hyprland
+dnf5 -y copr enable eli-xciv/hyprland
 dnf5 -y copr enable alternateved/keyd
 
 #### greeters, login things
