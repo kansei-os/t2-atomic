@@ -119,6 +119,6 @@ dnf5 -y copr disable alebastr/sway-extras
 dnf5 -y copr disable shdwchn10/AllTheTools
 dnf5 -y copr disable yalter/niri
 dnf5 -y copr disable kylegospo/webapp-manager
-dnf5 -y copr disable solopasha/hyprland
+dnf5 -y copr disable eli-xciv/hyprland
 dnf5 -y copr disable alternateved/keyd
 dnf5 -y copr disable ublue-os/packages
