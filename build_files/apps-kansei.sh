@@ -17,6 +17,8 @@ dnf5 -y copr enable shdwchn10/AllTheTools
 dnf5 -y copr enable yalter/niri
 dnf5 -y copr enable eli-xciv/hyprland
 dnf5 -y copr enable alternateved/keyd
+dnf5 -y copr enable scottames/ghostty
+
 
 #### greeters, login things
 dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
@@ -53,7 +55,7 @@ dnf5 -y install --skip-unavailable nautilus thunar thunar-archive-plugin thunar-
   gvfs-nfs gvfs-fuse gvfs-archive android-tools slurp grim \
   waybar dunst alacritty foot swayimg cups-pdf wf-recorder \
   SwayNotificationCenter swww papers-nautilus papers-previewer \
-  papers-thumbnailer
+  papers-thumbnailer ghostty
 
 #### cli utils
 dnf5 -y install --skip-unavailable curl ffmpeg ffmpegthumbnailer fzf rsync zsh unrar-free xz wodim git cdrecord cdda2wav \
@@ -122,3 +124,4 @@ dnf5 -y copr disable kylegospo/webapp-manager
 dnf5 -y copr disable eli-xciv/hyprland
 dnf5 -y copr disable alternateved/keyd
 dnf5 -y copr disable ublue-os/packages
+dnf5 -y copr disable scottames/ghostty
