@@ -7,7 +7,7 @@ set -ouex pipefail
 dnf5 -y remove gnome-classic-session
 dnf5 -y remove firefox firefox-langpacks
 dnf5 -y remove chromium
-
+dnf5 -y remove tiny-dfr # fn key doesn't seem to be working anymore which makes switching ttys a problem
 
 ### Install packages
 
