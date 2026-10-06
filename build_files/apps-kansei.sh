@@ -36,7 +36,7 @@ dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
 dnf5 -y install --skip-unavailable tuned tuned-ppd \
   polkit xfce-polkit xdg-user-dirs dbus-tools dbus-daemon \
   wl-clipboard pavucontrol playerctl \
-  vulkan-tools gnome-disk-utility ddcutil waycheck wlogout \
+  vulkan-tools gnome-disk-utility waycheck wlogout \
   xwayland-satellite fuzzel rofi-wayland nwg-bar wev darkman
 
 #### sound networking etc
