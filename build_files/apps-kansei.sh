@@ -26,7 +26,7 @@ dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
 dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
   glibc-langpack-en plymouth-plugin-label plymouth-plugin-two-step \
   podman-compose podman-machine podman-tui powerstat cockpit-system \
-  cockpit-ostree cockpit-selinux cockpit-networkmanager \
+  cockpit-ostree cockpit-selinux cockpit-networkmanager oo7-portal \
   system-config-printer thermald zram-generator-defaults \
   libsecret seahorse rtkit time smartmontools-selinux setools-console \
   sane-backends osbuild-selinux NetworkManager-wifi \
