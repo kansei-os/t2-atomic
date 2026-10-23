@@ -20,10 +20,10 @@ dnf5 -y copr enable scottames/ghostty
 
 
 #### greeters, login things
-dnf5 -y install greetd greetd-selinux tuigreet gtkgreet seatd
+dnf5 -y install --skip-unavailable greetd greetd-selinux tuigreet gtkgreet seatd
 
 #### basic system things
-dnf5 -y install bolt cups-pk-helper firewalld firewall-config fuse \
+dnf5 -y install --skip-unavailable bolt cups-pk-helper firewalld firewall-config fuse \
   glibc-langpack-en plymouth-plugin-label plymouth-plugin-two-step \
   podman-compose podman-machine podman-tui powerstat cockpit-system \
   cockpit-ostree cockpit-selinux cockpit-networkmanager oo7-portal \
