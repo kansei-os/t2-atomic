@@ -17,6 +17,7 @@ dnf5 -y copr enable yalter/niri
 dnf5 -y copr enable eli-xciv/hyprland
 dnf5 -y copr enable alternateved/keyd
 dnf5 -y copr enable scottames/ghostty
+dnf5 -y copr enable sharpenedblade/t2linux
 
 #### test F45 content
 dnf5 -y install --skip-unavailable t2-touchid oo7-portal
@@ -117,6 +118,7 @@ dnf5 -y config-manager addrepo --overwrite --from-repofile=https://pkgs.tailscal
 dnf5 -y install tailscale
 systemctl enable tailscaled.service
 
+dnf5 -y copr disable sharpenedblade/t2linux
 dnf5 -y copr disable erikreider/SwayNotificationCenter
 dnf5 -y copr disable alebastr/sway-extras
 dnf5 -y copr disable shdwchn10/AllTheTools
