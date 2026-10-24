@@ -18,6 +18,8 @@ dnf5 -y copr enable eli-xciv/hyprland
 dnf5 -y copr enable alternateved/keyd
 dnf5 -y copr enable scottames/ghostty
 
+#### test F45 content
+dnf5 -y install --skip-unavailable t2-touchid oo7-portal
 
 #### greeters, login things
 dnf5 -y install --skip-unavailable greetd greetd-selinux tuigreet gtkgreet seatd
@@ -26,7 +28,7 @@ dnf5 -y install --skip-unavailable greetd greetd-selinux tuigreet gtkgreet seatd
 dnf5 -y install --skip-unavailable bolt cups-pk-helper firewalld firewall-config fuse \
   glibc-langpack-en plymouth-plugin-label plymouth-plugin-two-step \
   podman-compose podman-machine podman-tui powerstat cockpit-system \
-  cockpit-ostree cockpit-selinux cockpit-networkmanager oo7-portal \
+  cockpit-ostree cockpit-selinux cockpit-networkmanager \
   system-config-printer thermald zram-generator-defaults \
   libsecret seahorse rtkit time smartmontools-selinux setools-console \
   sane-backends osbuild-selinux NetworkManager-wifi \
@@ -75,13 +77,13 @@ dnf5 -y install --skip-unavailable adobe-source-code-pro-fonts adwaita-fonts-all
   # rip f43 mozilla-fira-sans-fonts and mozilla-fira-mono-fonts
 
 #### kansei spin
-dnf5 -y install --skip-unavailable river-classic xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
+dnf5 -y install --skip-unavailable river xdg-desktop-portal-wlr xdg-desktop-portal-gtk \
   sysprof-cli fedora-easy-karma gcc make libtirpc-devel \
   python3-openidc-client cosmic-store cosmic-files \
   cosmic-edit cosmic-settings cosmic-settings-daemon \
   topgrade niri wayvnc cosmic-session brasero node-exporter \
   syncthing keyd rocm-opencl rocm-runtime distrobox \
-  boinc-client boinc-manager xdg-utils dillo noctalia
+  boinc-client boinc-manager xdg-utils dillo noctalia dex-autostart
 
 # quickshell package set testing
 #dnf5 -y copr enable errornointernet/quickshell
