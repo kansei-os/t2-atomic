@@ -57,7 +57,7 @@ dnf5 -y install --skip-unavailable nautilus thunar thunar-archive-plugin thunar-
   gvfs-nfs gvfs-fuse gvfs-archive android-tools slurp grim \
   waybar dunst alacritty foot swayimg cups-pdf wf-recorder \
   SwayNotificationCenter swww papers-nautilus papers-previewer \
-  papers-thumbnailer ghostty
+  papers-thumbnailer ghostty system-config-printer-applet
 
 #### cli utils
 dnf5 -y install --skip-unavailable curl ffmpeg ffmpegthumbnailer fzf rsync zsh unrar-free xz wodim git cdrecord cdda2wav \
@@ -84,7 +84,9 @@ dnf5 -y install --skip-unavailable river xdg-desktop-portal-wlr xdg-desktop-port
   cosmic-edit cosmic-settings cosmic-settings-daemon \
   topgrade niri wayvnc cosmic-session brasero node-exporter \
   syncthing keyd rocm-opencl rocm-runtime distrobox \
-  boinc-client boinc-manager xdg-utils dillo noctalia dex-autostart
+  boinc-client boinc-manager xdg-utils dillo noctalia \
+  budgie-desktop
+  
 
 # quickshell package set testing
 #dnf5 -y copr enable errornointernet/quickshell
