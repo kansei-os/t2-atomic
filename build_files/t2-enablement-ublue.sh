@@ -66,7 +66,7 @@ mkdir -p /lib/firmware/brcm
 tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
 
 # applying some T2 customizations
-systemctl mask suspend.target
+#systemctl mask suspend.target
 systemctl enable t2fanrd.service
 
 dnf5 install -y fedora-release-ostree-desktop
