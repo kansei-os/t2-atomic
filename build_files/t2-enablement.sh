@@ -53,11 +53,12 @@ dnf5 install -y lm_sensors sg3_utils wodim xorriso radeontop libinput libinput-u
 mkdir -p /lib/firmware/brcm
 tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
 
-curl -sL https://github.com/AdityaGarg8/Apple-Firmware/archive/refs/heads/main.tar.gz | \
-  tar xz --strip-components=4 -C /lib/firmware/brcm --wildcards '*/brcmfmac4355*'
+# the following source is RIP as of summer 2026, need to get the MBA firmware and integrate it ourselves
+#curl -sL https://github.com/AdityaGarg8/Apple-Firmware/archive/refs/heads/main.tar.gz | \
+#  tar xz --strip-components=4 -C /lib/firmware/brcm --wildcards '*/brcmfmac4355*'
 
 # applying some T2 customizations
-systemctl mask suspend.target
+# systemctl mask suspend.target
 systemctl enable t2fanrd.service
 
 dnf5 install -y fedora-release-ostree-desktop
