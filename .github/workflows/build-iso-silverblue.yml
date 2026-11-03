@@ -80,7 +80,7 @@ jobs:
         
       - name: Build ISO
         id: build
-        uses: osbuild/image-builder-action@v1
+        uses: osbuild/image-builder-action@main
         with:
           image_type: bootc-generic-iso
           bootc_ref: quay.io/my-org/anaconda-installer:latest
