@@ -22,7 +22,8 @@ dnf5 -y copr enable sharpenedblade/t2linux
 dnf5 -y remove kmod-framework-laptop \
     kmod-openrazer kmod-xone \
     kernel-modules-akmods kmod-v4l2loopback \
-    kernel-headers
+    kernel-headers kmod-evdi kmod-gcadapter \
+    kmod-hid-fanatecff kmod-hid-tmff2 kmod-kvmfr
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
 #dnf5 -y versionlock delete kernel kernel-core kernel-modules \
 #  kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
