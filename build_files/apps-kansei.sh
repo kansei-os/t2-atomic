@@ -44,7 +44,7 @@ dnf5 -y install --skip-unavailable tuned tuned-ppd \
   xwayland-satellite fuzzel rofi-wayland nwg-bar wev darkman
 
 #### sound networking etc
-dnf5 -y install --skip-unavailable helvum network-manager-applet \
+dnf5 -y install --skip-unavailable --skip-broken helvum network-manager-applet \
 NetworkManager-openvpn NetworkManager-openconnect \
 bluez bluez-tools blueman poweralertd #pipewire-utils pipewire-config-raop
 
