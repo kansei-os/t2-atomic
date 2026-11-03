@@ -23,7 +23,9 @@ dnf5 -y remove kmod-framework-laptop \
     kmod-openrazer kmod-xone \
     kernel-modules-akmods kmod-v4l2loopback \
     kernel-headers kmod-evdi kmod-gcadapter \
-    kmod-hid-fanatecff kmod-hid-tmff2 kmod-kvmfr
+    kmod-hid-fanatecff kmod-hid-tmff2 kmod-kvmfr \
+    kmod-sc0710 kmod-ryzen_smu kmod-new-lg4ff \
+    kmod-nct6687d kmod-gcadapter_oc
 #dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
 #dnf5 -y versionlock delete kernel kernel-core kernel-modules \
 #  kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
