@@ -77,17 +77,14 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
-
-      - name: Build disk images
+        
+      - name: Build ISO
         id: build
-        uses: osbuild/bootc-image-builder-action@main
+      - uses: osbuild/image-builder-action@v1
         with:
-          builder-image: ${{ env.BIB_IMAGE }}
-          config-file: ${{ matrix.disk-type == 'bootc-installer' && './disk_config/iso.toml' || './disk_config/disk.toml' }}
-          image: ${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DEFAULT_TAG }}
-          chown: ${{ env.USER_UID }}:${{ env.USER_GID }}
-          types: ${{ matrix.disk-type }}
-          additional-args: --use-librepo=True --rootfs btrfs
+          image_type: bootc-generic-iso
+          bootc_ref: quay.io/my-org/anaconda-installer:latest
+          bootc_installer_payload_ref: ghcr.io/kansei-os/t2-atomic-silverblue:latest
 
       - name: Upload disk images and Checksum to Job Artifacts
         if: inputs.upload-to-s3 != true && github.event_name != 'pull_request'
