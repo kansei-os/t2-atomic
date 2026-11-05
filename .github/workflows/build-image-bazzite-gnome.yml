@@ -1,9 +1,9 @@
 ---
 name: Build Image - Bazzite (Gnome)
 on:
-  pull_request:
-    branches:
-      - main
+  #pull_request:
+  #  branches:
+  #    - main
   schedule:
     - cron: "30 11 * * *" # 11:30am UTC everyday
   #push:

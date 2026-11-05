@@ -1,9 +1,9 @@
 ---
 name: Build Image - test
 on:
-  pull_request:
-    branches:
-      - main
+  #pull_request:
+  #  branches:
+  #    - main
   schedule:
     - cron: "0 10 * * *" # 10:00am UTC everyday
   #push:

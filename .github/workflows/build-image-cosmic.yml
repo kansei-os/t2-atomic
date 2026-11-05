@@ -1,9 +1,9 @@
 ---
 name: Build Image - COSMIC
 on:
-  pull_request:
-    branches:
-      - main
+  #pull_request:
+  #  branches:
+  #    - main
   schedule:
     - cron: "30 10 * * *" # 10:05am UTC everyday
   #push:
