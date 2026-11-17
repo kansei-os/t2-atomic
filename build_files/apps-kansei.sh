@@ -107,6 +107,10 @@ dnf5 -y install --skip-unavailable river xdg-desktop-portal-wlr xdg-desktop-port
 
 dnf5 -y install --skip-unavailable noctalia noctalia-greeter-git umbriel-git \
     xdg-desktop-portal-umbriel-git cava phinger-cursors
+# the following enables a copr, disables it,
+# and then installs one specific package from it.
+# this prevents this copr overriding other packages
+# during build
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
 dnf5 -y --enablerepo copr:copr.fedorainfracloud.org:ublue-os:packages install ublue-brew
@@ -123,7 +127,7 @@ dnf5 -y install webapp-manager
 dnf5 -y config-manager addrepo --overwrite --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 -y install tailscale
 systemctl enable tailscaled.service
-dnf5 config-manager setopt tailscale.enabled=0
+#dnf5 config-manager setopt tailscale.enabled=0
 
 dnf5 -y copr disable sharpenedblade/t2linux
 dnf5 -y copr disable erikreider/SwayNotificationCenter
