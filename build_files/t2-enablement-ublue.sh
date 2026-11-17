@@ -41,7 +41,7 @@ dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install \
     kernel-modules \
     kernel-tools \
     kernel-tools-libs \
-    kernel-uki-vert \
+    #kernel-uki-vert \
     kernel-modules-core \
     kernel-modules-extra #\
     #kernel-devel kernel-devel-matched
