@@ -1,24 +1,19 @@
 #!/bin/bash
+# This script installs the T2 kernel and
+# various tools related to maximizing this
+# Apple hardware on Linux.
 
 set -ouex pipefail
-#kver="6.15.3-210.t2.fc42.x86_64"
-### Install packages
+# Note: Disable COPRs after use so they don't end up enabled on the final image:
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-
-# this installs a package from fedora repos
-
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/
 dnf5 -y install dnf5-plugins python3-jsonschema
 dnf5 -y copr enable sharpenedblade/t2linux
+
+# remove the many kernel modules bazzite installs
+# and that are incompatible with the T2 kernel
+# if any users need these modules we can build them
+# in the future.
+#
 dnf5 -y remove kmod-framework-laptop \
     kmod-openrazer kmod-xone \
     kernel-modules-akmods kmod-v4l2loopback \
@@ -27,12 +22,14 @@ dnf5 -y remove kmod-framework-laptop \
     kmod-sc0710 kmod-ryzen_smu kmod-new-lg4ff \
     kmod-nct6687d kmod-gcadapter_oc kmod-system76-driver \
     kmod-system76-io kmod-t150-driver kmod-wl kmod-zenergy
+
 dnf5 -y remove \
     kernel-uki-virt \
     kernel-tools kernel-tools-libs \
     kernel-devel kernel-devel-matched \
     kernel-modules-extra kernel-headers \
-    kernel-modules-core kernel-core \
+    kernel-modules-core kernel-core
+
 dnf5 -y versionlock delete kernel kernel-core kernel-modules \
   kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
 if ! grep -q layout=ostree /usr/lib/kernel/install.conf; then
