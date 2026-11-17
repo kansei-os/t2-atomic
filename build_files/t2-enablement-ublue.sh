@@ -27,6 +27,7 @@ dnf5 -y remove \
     kernel-uki-virt \
     kernel-tools kernel-tools-libs \
     kernel-devel kernel-devel-matched \
+    kernel-modules \
     kernel-modules-extra kernel-headers \
     kernel-modules-core kernel-core
 
