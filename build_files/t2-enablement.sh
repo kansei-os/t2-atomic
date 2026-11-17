@@ -52,6 +52,14 @@ dnf5 -y copr disable sharpenedblade/t2linux
 # and cli apps to access hardware sensors
 dnf5 install -y lm_sensors sg3_utils wodim xorriso radeontop libinput libinput-utils
 
+# install IWD and radio software
+# iwd as backend seems to work better than wpa_supplicant on this hardware
+dnf5 swap -y wpa_supplicant iwd
+cat >> /etc/NetworkManager/conf.d/iwd.conf << EOF
+[device]
+wifi.backend=iwd
+EOF
+
 mkdir -p /lib/firmware/brcm
 tar -xf /ctx/common/radio.tar -C /lib/firmware/brcm
 
