@@ -33,9 +33,11 @@ rpm-ostree cliwrap install-to-root / && \
     rpm-ostree override replace --experimental --freeze \
     --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
     kernel kernel-core \
+    kernel-uki-virt \
     kernel-modules kernel-modules-core \
     kernel-modules-extra \
     kernel-devel-matched \
+    kernel-tools kernel-tools-libs
 
 dnf5 -y install t2fanrd t2linux-release t2-touchid #per sharpenedblade this will continue as the metapackage to include all the t2 parts
 rm -f /usr/share/pipewire/pipewire.conf.d/raop.conf
