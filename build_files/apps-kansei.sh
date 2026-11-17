@@ -18,6 +18,7 @@ dnf5 -y copr enable eli-xciv/hyprland
 dnf5 -y copr enable alternateved/keyd
 dnf5 -y copr enable scottames/ghostty
 dnf5 -y copr enable sharpenedblade/t2linux
+dnf5 -y copr enable lemmy/favorites
 
 #### test F45 content
 dnf5 -y install --skip-unavailable t2-touchid oo7-portal
@@ -87,7 +88,7 @@ dnf5 -y install --skip-unavailable river xdg-desktop-portal-wlr xdg-desktop-port
   syncthing keyd rocm-opencl rocm-runtime distrobox \
   boinc-client boinc-manager xdg-utils dillo noctalia \
   budgie-desktop
-  
+
 
 # quickshell package set testing
 #dnf5 -y copr enable errornointernet/quickshell
@@ -104,6 +105,8 @@ dnf5 -y install --skip-unavailable river xdg-desktop-portal-wlr xdg-desktop-port
 #dnf5 copr disable zhangyi6324/noctalia-shell
 #dnf5 copr disable brycensranch/gpu-screen-recorder-git
 
+dnf5 -y install --skip-unavailable noctalia noctalia-greeter-git umbriel-git \
+    xdg-desktop-portal-umbriel-git cava phinger-cursors
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
 dnf5 -y --enablerepo copr:copr.fedorainfracloud.org:ublue-os:packages install ublue-brew
@@ -120,6 +123,7 @@ dnf5 -y install webapp-manager
 dnf5 -y config-manager addrepo --overwrite --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 -y install tailscale
 systemctl enable tailscaled.service
+dnf5 config-manager setopt tailscale.enabled=0
 
 dnf5 -y copr disable sharpenedblade/t2linux
 dnf5 -y copr disable erikreider/SwayNotificationCenter
@@ -131,3 +135,4 @@ dnf5 -y copr disable eli-xciv/hyprland
 dnf5 -y copr disable alternateved/keyd
 dnf5 -y copr disable ublue-os/packages
 dnf5 -y copr disable scottames/ghostty
+dnf5 -y copr disable lemmy/favorites
