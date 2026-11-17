@@ -43,8 +43,8 @@ dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install \
     kernel-tools-libs \
     kernel-uki-vert \
     kernel-modules-core \
-    kernel-modules-extra \
-    kernel-devel kernel-devel-matched
+    kernel-modules-extra #\
+    #kernel-devel kernel-devel-matched
 #rpm-ostree cliwrap install-to-root / && \
     rpm-ostree override replace --experimental --freeze \
     --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
