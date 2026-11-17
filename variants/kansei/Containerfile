@@ -4,10 +4,10 @@ COPY build_files /
 
 # Base Image
 #FROM quay.io/fedora/fedora-bootc:43
-FROM quay.io/fedora/fedora-silverblue:45
+#FROM quay.io/fedora/fedora-silverblue:45
 #FROM ghcr.io/ublue-os/bluefin-dx:43
 #FROM ghcr.io/ublue-os/kinoite-main:latest
-
+FROM ghcr.io/ublue-os/bluefin-dx:latest
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
