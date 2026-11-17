@@ -27,15 +27,27 @@ dnf5 -y remove kmod-framework-laptop \
     kmod-sc0710 kmod-ryzen_smu kmod-new-lg4ff \
     kmod-nct6687d kmod-gcadapter_oc kmod-system76-driver \
     kmod-system76-io kmod-t150-driver kmod-wl kmod-zenergy
-#dnf5 -y remove kernel-uki-virt kernel-tools kernel-tools-libs kernel-modules-extra kernel-headers
-#dnf5 -y versionlock delete kernel kernel-core kernel-modules \
-#  kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
+dnf5 -y remove \
+    kernel-uki-virt \
+    kernel-tools kernel-tools-libs \
+    kernel-devel kernel-devel-matched \
+    kernel-modules-extra kernel-headers \
+    kernel-modules-core kernel-core \
+dnf5 -y versionlock delete kernel kernel-core kernel-modules \
+  kernel-headers kernel-modules-core kernel-tools kernel-tools-libs
 if ! grep -q layout=ostree /usr/lib/kernel/install.conf; then
     echo layout=ostree >> /usr/lib/kernel/install.conf
 fi
-#dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install kernel \
-#  kernel-modules kernel-tools kernel-tools-libs
-rpm-ostree cliwrap install-to-root / && \
+dnf5 -y --repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux install \
+    kernel kernel-core \
+    kernel-modules \
+    kernel-tools \
+    kernel-tools-libs \
+    kernel-uki-vert \
+    kernel-modules-core \
+    kernel-modules-extra \
+    kernel-devel kernel-devel-matched
+#rpm-ostree cliwrap install-to-root / && \
     rpm-ostree override replace --experimental --freeze \
     --from repo=copr:copr.fedorainfracloud.org:sharpenedblade:t2linux \
     kernel-uki-virt \
