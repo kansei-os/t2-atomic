@@ -20,6 +20,7 @@ dnf5 -y copr enable scottames/ghostty
 dnf5 -y copr enable sharpenedblade/t2linux
 dnf5 -y copr enable lemmy/favorites
 
+
 #### test F45 content
 dnf5 -y install --skip-unavailable t2-touchid oo7-portal
 
@@ -89,6 +90,7 @@ dnf5 -y install --skip-unavailable river xdg-desktop-portal-wlr xdg-desktop-port
   boinc-client boinc-manager xdg-utils dillo noctalia \
   budgie-desktop
 
+dnf5 -y --enablerepo copr:copr.fedorainfracloud.org:lionheartp:hyprland install luciole-git
 
 # quickshell package set testing
 #dnf5 -y copr enable errornointernet/quickshell
