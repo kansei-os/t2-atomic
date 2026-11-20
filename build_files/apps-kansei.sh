@@ -19,7 +19,6 @@ dnf5 -y copr enable alternateved/keyd
 dnf5 -y copr enable scottames/ghostty
 dnf5 -y copr enable sharpenedblade/t2linux
 dnf5 -y copr enable lemmy/favorites
-dnf5 -y copr enable lionheartp/hyprland
 
 
 #### test F45 content
@@ -91,7 +90,6 @@ dnf5 -y install --skip-unavailable river xdg-desktop-portal-wlr xdg-desktop-port
   boinc-client boinc-manager xdg-utils dillo noctalia \
   budgie-desktop
 
-dnf5 -y --enablerepo copr:copr.fedorainfracloud.org:lionheartp:hyprland install luciole-git
 
 # quickshell package set testing
 #dnf5 -y copr enable errornointernet/quickshell
@@ -117,10 +115,14 @@ dnf5 -y install --skip-unavailable noctalia noctalia-greeter-git umbriel-git \
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y config-manager setopt copr:copr.fedorainfracloud.org:ublue-os:packages.enabled=0
 dnf5 -y --enablerepo copr:copr.fedorainfracloud.org:ublue-os:packages install ublue-brew
+dnf5 -y copr disable ublue-os/packages
 
 dnf5 -y copr enable kylegospo/webapp-manager
 dnf5 -y install webapp-manager
 
+dnf5 -y copr enable lionheartp/Hyprland
+dnf5 -y --enablerepo copr:copr.fedorainfracloud.org:lionheartp:Hyprland install luciole-git
+dnf5 -y copr disable lionheartp/Hyprland
 
 
 #flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -140,7 +142,6 @@ dnf5 -y copr disable yalter/niri
 dnf5 -y copr disable kylegospo/webapp-manager
 dnf5 -y copr disable eli-xciv/hyprland
 dnf5 -y copr disable alternateved/keyd
-dnf5 -y copr disable ublue-os/packages
+
 dnf5 -y copr disable scottames/ghostty
 dnf5 -y copr disable lemmy/favorites
-dnf5 -y copr disable lionheartp/hyprland
