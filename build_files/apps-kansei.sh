@@ -19,6 +19,7 @@ dnf5 -y copr enable alternateved/keyd
 dnf5 -y copr enable scottames/ghostty
 dnf5 -y copr enable sharpenedblade/t2linux
 dnf5 -y copr enable lemmy/favorites
+dnf5 -y copr enable lionheartp/hyprland
 
 
 #### test F45 content
@@ -142,3 +143,4 @@ dnf5 -y copr disable alternateved/keyd
 dnf5 -y copr disable ublue-os/packages
 dnf5 -y copr disable scottames/ghostty
 dnf5 -y copr disable lemmy/favorites
+dnf5 -y copr disable lionheartp/hyprland
