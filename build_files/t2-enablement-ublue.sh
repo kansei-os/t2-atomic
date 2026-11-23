@@ -21,7 +21,8 @@ dnf5 -y remove kmod-framework-laptop \
     kmod-hid-fanatecff kmod-hid-tmff2 kmod-kvmfr \
     kmod-sc0710 kmod-ryzen_smu kmod-new-lg4ff \
     kmod-nct6687d kmod-gcadapter_oc kmod-system76-driver \
-    kmod-system76-io kmod-t150-driver kmod-wl kmod-zenergy
+    kmod-system76-io kmod-t150-driver kmod-wl kmod-zenergy \
+    kmod-hid-hori
 
 dnf5 -y remove \
     kernel-uki-virt \
